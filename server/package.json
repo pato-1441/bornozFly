@@ -1,28 +1,38 @@
 {
-  "name": "bornozfly",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pato-1441/bornozFly.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pato-1441/bornozFly/issues"
-  },
-  "homepage": "https://github.com/pato-1441/bornozFly#readme",
-  "dependencies": {
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "joi": "^17.6.4"
-  }
+    "name": "bornoz-fly-front",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node -r dotenv/config index.js",
+        "dev": "node -r dotenv/config index.js",
+        "dev:wait": "node ./node_modules/nodemon/bin/nodemon.js --exec \"node -r dotenv/config server.js\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pato-1441/bornozFly.git"
+      },
+    "homepage": "https://github.com/pato-1441/bornozFly#readme",
+    "dependencies": {
+        "bcrypt": "^5.1.0",
+        "connect-mongo": "^4.6.0",
+        "cookie-parser": "^1.4.6",
+        "express": "^4.18.2",
+        "express-handlebars": "^6.0.6",
+        "express-session": "^1.17.3",
+        "hbs": "^4.2.0",
+        "mongoose": "^6.7.4",
+        "normalizr": "^3.6.2",
+        "passport": "^0.6.0",
+        "passport-local": "^1.0.0",
+        "pug": "^3.0.2",
+        "socket.io": "^4.5.3"
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "@faker-js/faker": "^7.6.0",
+        "dotenv": "^16.0.3",
+        "nodemon": "^2.0.20"
+    }
 }
