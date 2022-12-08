@@ -10,7 +10,7 @@ passportAuthsRouter.get("/signup-error", (req, res) => {
   res.render("signup-error", {});
 });
 passportAuthsRouter.get("/login-error", (req, res) => {
-  res.render("login-error", {});
+  res.render("login-error", {})
 });
 
 passportAuthsRouter.get("/signup", (req, res) => {

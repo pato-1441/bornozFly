@@ -1,14 +1,12 @@
-<div class="container my-5">
-  <div class="jumbotron">
-    <h1>Hi {{username}}</h1>
-
-    <hr />
-
-    <div class="text-left">
-      <button
-        class="btn btn-success my-3"
+<div class="flex justify-center">
+  <div class="mt-10 w-3/4 bg-gray-800 py-10 px-10 rounded-box">
+    <div class="flex justify-between">
+      <h1 class="text-3xl mb-5 text-white">Hi {{username}}.</h1>
+      <input
+        class="btn bg-red-600 hover:bg-red-500 text-white px-0"
         onclick="location.href = '/logout'"
-      >Logout</button>
+        value="Logout"
+      />
     </div>
   </div>
 </div>
