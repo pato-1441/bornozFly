@@ -1,5 +1,5 @@
 <div class="flex justify-center">
-  <div class="m-10 w-3/4 bg-gray-800 py-10 px-10 rounded-box">
+  <div class="sm:m-10 w-full sm:w-3/4 bg-gray-800 p-5 pt-20 sm:p-10 rounded-box h-screen sm:h-fit">
     <!--WELCOME-->
     <section>
       <div class="flex justify-between mb-10">
@@ -15,7 +15,7 @@
     <!--PRODUCTOS FORM / TABLE-->
     <section class="text-white">
       <h2 class="text-2xl">Products</h2>
-      <div class="form-control">
+      <div class="form-control flex gap-3">
         <div>
           <label class="label">
             <span class="label-text">Product name</span>
@@ -55,9 +55,15 @@
             />
           </label>
         </div>
+        <div class="flex">
+          <input
+            class="btn btn-success"
+            value="Submit"
+          />
+        </div>
       </div>
       <div class="overflow-x-auto">
-        <table class="table w-full my-5 text-center">
+        <table class="table table-compact sm:table-normal w-full my-5 text-center">
           <!-- head -->
           <thead class="text-white">
             <tr>
