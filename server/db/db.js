@@ -42,7 +42,7 @@ class Messages extends DB {
     super(
       mongoose.model("messages", {
         author: {
-          id: { type: String, required: true },
+          id: { type: String, required: false },
           name: { type: String, required: true },
           surname: { type: String, required: false },
           age: { type: Number, required: false },

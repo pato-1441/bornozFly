@@ -109,7 +109,7 @@
           <h2 class="text-2xl">Chat</h2>
           <div>
             <form
-              class="d-flex flex-row flex-wrap justify-content-evenly text-black"
+              class="flex items-center text-black mt-3"
               id="enviarMensaje"
               action="#"
             >
@@ -117,7 +117,7 @@
                 class="text-black p-2 mr-2 bg-white input input-bordered"
                 required
                 type="text"
-                placeholder="Ingrese su alias..."
+                placeholder="Your username..."
                 name="usernameAlias"
                 id="usernameAlias"
               />
@@ -125,34 +125,23 @@
                 class="text-black p-2 mr-2 bg-white input input-bordered"
                 required
                 type="text"
-                placeholder="Ingrese su mensaje..."
+                placeholder="Your message..."
                 name="message"
                 id="messageInput"
               />
-              <input
-                class="btn btn-primary mt-3"
+              <button
+                class="btn btn-primary"
                 type="submit"
-                value="Enviar"
-              />
+                value="Send">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                </svg>                
+              </button>
             </form>
           </div>
-          <div>
-            <div class="output-message">
-              <div class="max-w-2xl border rounded bg-gray-200">
-                <div>
-                  <div class="w-full">
-                    <div class="relative w-full p-6 overflow-y-auto h-[20rem]">
-                      <ul class="space-y-2">
-                        <div class="chat">
-                          <li class="flex justify-end px-1 py-2">
-                            <div id="messageOutput"></div>
-                          </li>
-                        </div>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div class="my-5">
+            <div class="w-full rounded bg-gray-200 text-black p-6">
+              <ul id="messageOutput" class="flex flex-col gap-4 items-end"></ul>
             </div>
           </div>
         </section>
