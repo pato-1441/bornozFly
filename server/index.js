@@ -13,7 +13,6 @@ import * as strategy from "./passport/strategy.js";
 import { initServer } from "./socket.js";
 import http from "http";
 import bodyParser from "body-parser";
-import path from "path";
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -45,7 +44,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join("public")));
+app.use(express.static("./public"));
 
 app.use("/", passportAuthsRouter);
 app.use("/api", productsTestRouter);
