@@ -32,7 +32,12 @@
         name: usernameAlias.value
       },
       text: messageInput.value,
-      sendAt: new Date().toLocaleTimeString(),
+      date: {
+        day: new Date().toLocaleDateString(),
+        hours: new Date().getHours(),
+        minutes: new Date().getMinutes(),
+        milliseconds: new Date().getMilliseconds()
+      }
     });
   });
 

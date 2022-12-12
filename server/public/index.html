@@ -18,7 +18,7 @@
     ></script>
     <script defer src="./js/main.js"></script>
   </head>
-  <body class="container-fluid">
+  <body class="container-fluid scroll-smooth">
     <div class="flex justify-center">
       <div
         class="sm:m-10 w-full sm:w-3/4 bg-gray-800 p-5 pt-20 sm:p-10 rounded-box h-screen sm:h-fit"
@@ -105,16 +105,17 @@
         </section>
         <!--FIN PRODUCTOS FORM / TABLE-->
         <!--COMIENZA CHAT FORM / DISPLAY-->
-        <section class="text-white">
+        <section class="text-white flex flex-col gap-3">
           <h2 class="text-2xl">Chat</h2>
+          <!--form message-->
           <div>
             <form
-              class="flex items-center text-black mt-3"
+              class="flex items-center text-black gap-3"
               id="enviarMensaje"
               action="#"
             >
               <input
-                class="text-black p-2 mr-2 bg-white input input-bordered"
+                class="text-black p-2 bg-white input input-bordered"
                 required
                 type="text"
                 placeholder="Your username..."
@@ -122,7 +123,7 @@
                 id="usernameAlias"
               />
               <input
-                class="text-black p-2 mr-2 bg-white input input-bordered"
+                class="text-black p-2 bg-white input input-bordered"
                 required
                 type="text"
                 placeholder="Your message..."
@@ -130,18 +131,31 @@
                 id="messageInput"
               />
               <button
-                class="btn btn-primary"
+                class="btn border-none bg-purple-700"
                 type="submit"
-                value="Send">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                </svg>                
+                value="Send"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5 text-white"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+                  />
+                </svg>
               </button>
             </form>
           </div>
-          <div class="my-5">
-            <div class="w-full rounded bg-gray-200 text-black p-6">
-              <ul id="messageOutput" class="flex flex-col gap-4 items-end"></ul>
+          <!--termina form message-->
+          <div class="max-h-96 overflow-x-auto">
+            <div class="w-full rounded bg-gray-200 text-black p-6 max-h-full">
+              <ul id="messageOutput" class="flex flex-col gap-2 items-end"></ul>
             </div>
           </div>
         </section>
