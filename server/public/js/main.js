@@ -1,6 +1,6 @@
 (() => {
   // User
-  const username = document.getElementById('username');
+  const username = document.getElementById("username");
 
   // Products
   const productNameInput = document.getElementById("nombreProducto");
@@ -11,6 +11,7 @@
 
   // Messages
   const messageForm = document.getElementById("enviarMensaje");
+  const usernameAlias = document.getElementById("usernameAlias");
   const messageInput = document.getElementById("messageInput");
   const messageOutput = document.getElementById("messageOutput");
   const socket = io();
@@ -18,8 +19,8 @@
   productForm.onsubmit = (e) => {
     e.preventDefault();
     socket.emit("product", {
-      nombre: productNameInput.value,
-      precio: productPriceInput.value,
+      name: productNameInput.value,
+      price: productPriceInput.value,
       url: productUrlInput.value,
     });
   };
@@ -27,7 +28,11 @@
   messageForm.addEventListener("submit", (e) => {
     e.preventDefault();
     socket.emit("message", {
-      message: messageInput.value,
+      author: {
+        name: usernameAlias.value
+      },
+      text: messageInput.value,
+      sendAt: new Date().toLocaleTimeString(),
     });
   });
 

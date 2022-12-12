@@ -26,7 +26,9 @@
         <!--WELCOME-->
         <section>
           <div class="flex justify-between mb-10">
-            <h1 class="text-3xl mb-5 text-white">Hi <span id="username"></span></h1>
+            <h1 class="text-3xl mb-5 text-white">
+              Hi <span id="username"></span>
+            </h1>
             <input
               class="btn bg-red-600 hover:bg-red-500 text-white px-0"
               onclick="location.href = '/logout'"
@@ -111,6 +113,14 @@
               id="enviarMensaje"
               action="#"
             >
+              <input
+                class="text-black p-2 mr-2 bg-white input input-bordered"
+                required
+                type="text"
+                placeholder="Ingrese su alias..."
+                name="usernameAlias"
+                id="usernameAlias"
+              />
               <input
                 class="text-black p-2 mr-2 bg-white input input-bordered"
                 required

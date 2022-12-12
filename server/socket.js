@@ -43,6 +43,7 @@ const setEvents = (io) => {
     });
 
     socketClient.on("message", async (data) => {
+      data.id = socketClient.id;
       await MessagesDB.addMessage(data);
       emit("message", await MessagesDB.readMessages());
     });
