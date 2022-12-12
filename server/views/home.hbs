@@ -15,7 +15,7 @@
     <!--PRODUCTOS FORM / TABLE-->
     <section class="text-white">
       <h2 class="text-2xl">Products</h2>
-      <div class="form-control flex gap-3">
+      <form class="form-control flex gap-3" id="enviarProducto">
         <div>
           <label class="label">
             <span class="label-text">Product name</span>
@@ -25,7 +25,8 @@
             <input
               type="text"
               placeholder="Book"
-              class="input input-bordered"
+              class="input input-bordered w-full"
+              id="nombreProducto"
             />
           </label>
         </div>
@@ -38,7 +39,8 @@
             <input
               type="number"
               placeholder="10"
-              class="input input-bordered"
+              class="input input-bordered w-full"
+              id="precioProducto"
             />
           </label>
         </div>
@@ -51,17 +53,19 @@
             <input
               type="text"
               placeholder="https://smartmobilestudio.com/wp-content/uploads/2012/06/leather-book-preview.png"
-              class="input input-bordered"
+              class="input input-bordered w-full"
+              id="urlProducto"
             />
           </label>
         </div>
         <div class="flex">
           <input
+            type="submit"
             class="btn btn-success"
             value="Submit"
           />
         </div>
-      </div>
+      </form>
       <div class="overflow-x-auto">
         <table class="table table-compact sm:table-normal w-full my-5 text-center">
           <!-- head -->
@@ -72,7 +76,7 @@
               <th>Picture</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="products">
             <!-- row 1 -->
             <tr class="hover text-white">
               <td>Cy Ganderton</td>
@@ -95,6 +99,12 @@
     </section>
     <!--FIN PRODUCTOS FORM / TABLE-->
     <!--COMIENZA CHAT FORM / DISPLAY-->
+    <section class="text-white">
+      <h2 class="text-2xl">Chat</h2>
+      <div>
+
+      </div>
+    </section>
     <!--TERMINA CHAT FORM / DISPLAY-->
   </div>
 </div>

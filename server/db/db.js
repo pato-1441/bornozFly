@@ -44,12 +44,13 @@ class Messages extends DB {
         author: {
           id: { type: String, required: true },
           name: { type: String, required: true },
-          surname: { type: String, required: true },
-          age: { type: Number, required: true },
-          alias: { type: String, required: true },
-          avatar: { type: String, required: true },
+          surname: { type: String, required: false },
+          age: { type: Number, required: false },
+          alias: { type: String, required: false },
+          avatar: { type: String, required: false },
         },
         text: { type: String, required: true },
+        sendAt: { type: String, required: true },
       })
     );
   }

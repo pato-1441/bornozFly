@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.33.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"
+    ></script>
+    <script defer src="./js/main.js"></script>
+  </head>
+  <body class="container-fluid">
+    <div class="flex justify-center">
+      <div
+        class="sm:m-10 w-full sm:w-3/4 bg-gray-800 p-5 pt-20 sm:p-10 rounded-box h-screen sm:h-fit"
+      >
+        <!--WELCOME-->
+        <section>
+          <div class="flex justify-between mb-10">
+            <h1 class="text-3xl mb-5 text-white">Hi <span id="username"></span></h1>
+            <input
+              class="btn bg-red-600 hover:bg-red-500 text-white px-0"
+              onclick="location.href = '/logout'"
+              value="Logout"
+            />
+          </div>
+        </section>
+        <!--FIN WELCOME-->
+        <!--PRODUCTOS FORM / TABLE-->
+        <section class="text-white">
+          <h2 class="text-2xl">Products</h2>
+          <form class="form-control flex gap-3" id="enviarProducto">
+            <div>
+              <label class="label">
+                <span class="label-text">Product name</span>
+              </label>
+              <label class="input-group">
+                <span>Name</span>
+                <input
+                  type="text"
+                  placeholder="Book"
+                  class="input input-bordered w-full"
+                  id="nombreProducto"
+                />
+              </label>
+            </div>
+            <div>
+              <label class="label">
+                <span class="label-text">Enter amount</span>
+              </label>
+              <label class="input-group">
+                <span>Price</span>
+                <input
+                  type="number"
+                  placeholder="10"
+                  class="input input-bordered w-full"
+                  id="precioProducto"
+                />
+              </label>
+            </div>
+            <div>
+              <label class="label">
+                <span class="label-text">Thumbnail URL</span>
+              </label>
+              <label class="input-group">
+                <span>URL</span>
+                <input
+                  type="text"
+                  placeholder="https://smartmobilestudio.com/wp-content/uploads/2012/06/leather-book-preview.png"
+                  class="input input-bordered w-full"
+                  id="urlProducto"
+                />
+              </label>
+            </div>
+            <div class="flex">
+              <input type="submit" class="btn btn-success" value="Submit" />
+            </div>
+          </form>
+          <div class="overflow-x-auto">
+            <table
+              class="table table-compact sm:table-normal w-full my-5 text-center"
+            >
+              <!-- head -->
+              <thead class="text-white">
+                <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Picture</th>
+                </tr>
+              </thead>
+              <tbody id="products"></tbody>
+            </table>
+          </div>
+        </section>
+        <!--FIN PRODUCTOS FORM / TABLE-->
+        <!--COMIENZA CHAT FORM / DISPLAY-->
+        <section class="text-white">
+          <h2 class="text-2xl">Chat</h2>
+          <div>
+            <form
+              class="d-flex flex-row flex-wrap justify-content-evenly text-black"
+              id="enviarMensaje"
+              action="#"
+            >
+              <input
+                class="text-black p-2 mr-2 bg-white input input-bordered"
+                required
+                type="text"
+                placeholder="Ingrese su mensaje..."
+                name="message"
+                id="messageInput"
+              />
+              <input
+                class="btn btn-primary mt-3"
+                type="submit"
+                value="Enviar"
+              />
+            </form>
+          </div>
+          <div>
+            <div class="output-message">
+              <div class="max-w-2xl border rounded bg-gray-200">
+                <div>
+                  <div class="w-full">
+                    <div class="relative w-full p-6 overflow-y-auto h-[20rem]">
+                      <ul class="space-y-2">
+                        <div class="chat">
+                          <li class="flex justify-end px-1 py-2">
+                            <div id="messageOutput"></div>
+                          </li>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--TERMINA CHAT FORM / DISPLAY-->
+      </div>
+    </div>
+  </body>
+</html>
