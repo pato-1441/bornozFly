@@ -50,7 +50,12 @@ class Messages extends DB {
           avatar: { type: String, required: false },
         },
         text: { type: String, required: true },
-        sendAt: { type: String, required: true },
+        date: {
+          day: { type: String, required: true },
+          hours: { type: String, required: true },
+          minutes: { type: String, required: true },
+          milliseconds: { type: String, required: true },
+        },
       })
     );
   }
