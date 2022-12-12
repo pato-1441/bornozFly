@@ -6,8 +6,7 @@ import MongoStore from "connect-mongo";
 import handlebars from "express-handlebars";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
-import passportAuthsRouter from "./routes/passportAuthsRouter.js";
-import productsTestRouter from "./routes/productsTestRouter.js";
+import { passportAuthsRouter, productsTestRouter } from "./routes/index.js"
 import { User } from "./models/user.js";
 import * as strategy from "./passport/strategy.js";
 
@@ -40,7 +39,6 @@ app.engine(
 );
 app.set("view engine", "hbs");
 app.set("views", "./views");
-app.use(express.static("./static"));
 app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
