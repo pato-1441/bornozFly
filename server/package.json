@@ -5,14 +5,14 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "node -r dotenv/config index.js",
-        "dev": "node -r dotenv/config index.js",
-        "dev:wait": "node ./node_modules/nodemon/bin/nodemon.js --exec \"node -r dotenv/config index.js\""
+        "start": "node -r dotenv/config index.js -p 3100",
+        "dev": "node -r dotenv/config index.js -p 3100",
+        "dev:wait": "node ./node_modules/nodemon/bin/nodemon.js --exec \"node -r dotenv/config index.js -p 3100\""
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/pato-1441/bornozFly.git"
-      },
+    },
     "homepage": "https://github.com/pato-1441/bornozFly#readme",
     "dependencies": {
         "bcrypt": "^5.1.0",
@@ -22,6 +22,7 @@
         "express-handlebars": "^6.0.6",
         "express-session": "^1.17.3",
         "hbs": "^4.2.0",
+        "minimist": "^1.2.7",
         "mongoose": "^6.7.4",
         "normalizr": "^3.6.2",
         "passport": "^0.6.0",

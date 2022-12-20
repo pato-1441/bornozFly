@@ -6,16 +6,27 @@ import MongoStore from "connect-mongo";
 import handlebars from "express-handlebars";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
-import { passportAuthsRouter, productsTestRouter } from "./routes/index.js"
+import { passportAuthsRouter, productsTestRouter } from "./routes/index.js";
 import { User } from "./models/user.js";
 import * as strategy from "./passport/strategy.js";
+import minimist from "minimist";
+
+const args = minimist(process.argv.slice(2), {
+  alias: {
+    p: "PORT",
+  },
+  default: {
+    p: 8080,
+  },
+});
+
+const {PORT} = args
 
 import { initServer } from "./socket.js";
 import http from "http";
 import bodyParser from "body-parser";
 
 const app = express();
-const PORT = process.env.PORT || 8080;
 
 app.use(cookieParser());
 app.use(
@@ -80,6 +91,6 @@ const server = http.createServer(app);
 initServer(server);
 
 server.listen(PORT, async () => {
-  console.log("Your app is listening on port " + PORT);
+  console.log("Your app is listening on " + `${process.env.NODE_URL}:${PORT}/`);
   console.log("Environment: " + process.env.NODE_ENV);
 });
