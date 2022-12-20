@@ -38,7 +38,8 @@
         minutes: new Date().getMinutes(),
         milliseconds: new Date().getMilliseconds()
       }
-    });
+    })
+    messageInput.value = '';
   });
 
   socket.on("connect", () => {
