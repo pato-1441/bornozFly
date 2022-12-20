@@ -6,7 +6,11 @@ import MongoStore from "connect-mongo";
 import handlebars from "express-handlebars";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
-import { passportAuthsRouter, productsTestRouter } from "./routes/index.js";
+import {
+  infoRouter,
+  passportAuthsRouter,
+  productsTestRouter,
+} from "./routes/index.js";
 import { User } from "./models/user.js";
 import * as strategy from "./passport/strategy.js";
 import minimist from "minimist";
@@ -20,7 +24,7 @@ const args = minimist(process.argv.slice(2), {
   },
 });
 
-const {PORT} = args
+const { PORT } = args;
 
 import { initServer } from "./socket.js";
 import http from "http";
@@ -59,6 +63,7 @@ app.use(express.static("./public"));
 
 app.use("/", passportAuthsRouter);
 app.use("/api", productsTestRouter);
+app.use("/info", infoRouter);
 
 passport.use(
   "login",
