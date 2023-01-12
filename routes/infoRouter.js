@@ -3,7 +3,19 @@ import compression from "compression";
 
 const infoRouter = Router();
 
-infoRouter.get("/", compression(), (req, res) => {
+infoRouter.get("/", (req, res) => {
+  res.json({
+    argv: process.argv.slice(2),
+    platform: process.platform,
+    version: process.version,
+    rss: process.memoryUsage(),
+    cwd: process.cwd(),
+    pe: process.execPath,
+    pid: process.pid,
+  });
+});
+
+infoRouter.get("/zip", compression(), (req, res) => {
   res.json({
     argv: process.argv.slice(2),
     platform: process.platform,
@@ -16,3 +28,4 @@ infoRouter.get("/", compression(), (req, res) => {
 });
 
 export default infoRouter;
+
