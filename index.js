@@ -20,8 +20,17 @@ import { initServer } from "./socket.js";
 import http from "http";
 import bodyParser from "body-parser";
 import pino from "pino";
+import pretty from "pino-pretty"
 
-const logger = pino();
+const logger = pino({
+  level: "info",
+  transport: {
+    target: "pino-pretty",
+    options: {
+      colorize: true,
+    },
+  },
+});
 
 const args = minimist(process.argv.slice(2), {
   alias: {
