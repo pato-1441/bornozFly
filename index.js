@@ -1,5 +1,6 @@
 // init project
 import express from "express";
+import compression from "compression";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import MongoStore from "connect-mongo";
@@ -46,6 +47,7 @@ if (MODE === "cluster" && cluster.isPrimary) {
 } else {
   const app = express();
 
+  app.use(compression())
   app.use(cookieParser());
   app.use(
     session({
