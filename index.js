@@ -19,19 +19,31 @@ import cluster from "cluster";
 import { initServer } from "./socket.js";
 import http from "http";
 import bodyParser from "body-parser";
+import fs from "fs"
 import pino from "pino";
+import pretty from "pino-pretty";
 
-const logger = pino({
-  level: "info",
-  transport: {
-    target: "pino-pretty",
-    options: {
-      translateTime: "SYS:dd-mm-yyyy HH:MM:ss",
-      ignore:"pid,hostname",
-      colorize: true,
+const streams = [
+  { stream: fs.createWriteStream("./logs/info.stream.log") },
+  { stream: pretty() },
+  { level: "debug", stream: fs.createWriteStream("./logs/debug.stream.log") },
+  { level: "fatal", stream: fs.createWriteStream("./logs/fatal.stream.log") },
+];
+
+const logger = pino(
+  {
+    level: "debug",
+    transport: {
+      target: "pino-pretty",
+      options: {
+        translateTime: "SYS:dd-mm-yyyy HH:MM:ss",
+        ignore: "pid,hostname",
+        colorize: true,
+      },
     },
   },
-});
+  pino.multistream(streams)
+);
 
 const args = minimist(process.argv.slice(2), {
   alias: {
