@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { faker } from "@faker-js/faker";
-import { fork } from "child_process";
 import logger from "../logger.js";
 
 faker.locale = "es";
@@ -32,17 +31,14 @@ productsTestRouter.get("/randoms", (req, res, next) => {
     if (isNaN(Number(quantity))) {
       res.json({ error: "You send a string, it must be a number" });
     } else {
-      logger.info(quantity);
-      const child = fork("calc.js");
-
-      child.on("message", (result) => {
-        if (result == "ready") {
-          child.send(Number(quantity));
-        } else {
-          logger.info("I end here");
-          res.json(result);
-        }
-      });
+      const quantityTimes = {};
+      for (let i = 0; i < quantity; i++) {
+        const number = Math.floor(Math.random() * 1000 + 1);
+        if (!quantityTimes[number]) quantityTimes[number] = 0;
+        quantityTimes[number]++;
+      }
+      logger.info(quantityTimes);
+      res.send(quantityTimes);
     }
   } catch (error) {
     next(error);
