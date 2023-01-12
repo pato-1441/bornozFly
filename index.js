@@ -20,13 +20,14 @@ import { initServer } from "./socket.js";
 import http from "http";
 import bodyParser from "body-parser";
 import pino from "pino";
-import pretty from "pino-pretty"
 
 const logger = pino({
   level: "info",
   transport: {
     target: "pino-pretty",
     options: {
+      translateTime: "SYS:dd-mm-yyyy HH:MM:ss",
+      ignore:"pid,hostname",
       colorize: true,
     },
   },
