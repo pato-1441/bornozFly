@@ -1,6 +1,5 @@
 // init project
 import express from "express";
-import compression from "compression";
 import cookieParser from "cookie-parser";
 import session from "express-session";
 import MongoStore from "connect-mongo";
@@ -20,6 +19,9 @@ import cluster from "cluster";
 import { initServer } from "./socket.js";
 import http from "http";
 import bodyParser from "body-parser";
+import pino from "pino";
+
+const logger = pino();
 
 const args = minimist(process.argv.slice(2), {
   alias: {
@@ -42,12 +44,11 @@ if (MODE === "cluster" && cluster.isPrimary) {
   }
 
   cluster.on("exit", (worker, code, signal) => {
-    console.log(`Worker ${worker} died`);
+    logger.info(`Worker ${worker} died`);
   });
 } else {
   const app = express();
 
-  app.use(compression())
   app.use(cookieParser());
   app.use(
     session({
@@ -103,7 +104,7 @@ if (MODE === "cluster" && cluster.isPrimary) {
     if (error.statusCode) {
       return res.status(error.statusCode).send(`Error ${error.statusCode}`);
     }
-    console.log(error);
+    logger.info(error);
     res.status(500).json({ error: "Somethings brokes..." });
   });
 
@@ -112,9 +113,9 @@ if (MODE === "cluster" && cluster.isPrimary) {
   initServer(server);
 
   server.listen(PORT, async () => {
-    console.log(
+    logger.info(
       "Your app is listening on " + `${process.env.NODE_URL}:${PORT}/`
     );
-    console.log("Environment: " + process.env.NODE_ENV);
+    logger.info("Environment: " + process.env.NODE_ENV);
   });
 }

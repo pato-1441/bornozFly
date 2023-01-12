@@ -1,8 +1,9 @@
 import { Router } from "express";
+import compression from "compression";
 
 const infoRouter = Router();
 
-infoRouter.get("/", (req, res) => {
+infoRouter.get("/", compression(), (req, res) => {
   res.json({
     argv: process.argv.slice(2),
     platform: process.platform,
