@@ -7,6 +7,15 @@ const infoRouter = Router();
 infoRouter.get("/", (req, res) => {
   const { url, method } = req;
   logger.info(`Ruta: "${url}", metodo: "${method}"`);
+  /* console.log({
+    argv: process.argv.slice(2),
+    platform: process.platform,
+    version: process.version,
+    rss: process.memoryUsage(),
+    cwd: process.cwd(),
+    pe: process.execPath,
+    pid: process.pid,
+  }); */
   res.json({
     argv: process.argv.slice(2),
     platform: process.platform,
