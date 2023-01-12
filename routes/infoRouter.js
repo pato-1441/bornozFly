@@ -1,9 +1,12 @@
 import { Router } from "express";
 import compression from "compression";
+import logger from "../logger.js";
 
 const infoRouter = Router();
 
 infoRouter.get("/", (req, res) => {
+  const { url, method } = req;
+  logger.info(`Ruta: "${url}", metodo: "${method}"`);
   res.json({
     argv: process.argv.slice(2),
     platform: process.platform,
@@ -28,4 +31,3 @@ infoRouter.get("/zip", compression(), (req, res) => {
 });
 
 export default infoRouter;
-

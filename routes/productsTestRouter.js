@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { faker } from "@faker-js/faker";
 import { fork } from "child_process";
+import logger from "../logger.js";
 
 faker.locale = "es";
 const { commerce, image } = faker;
@@ -18,7 +19,7 @@ productsTestRouter.get("/products-test/", (req, res, next) => {
         url: image.technics(),
       });
     }
-    console.log(data);
+    logger.info(data);
     res.render("products", data);
   } catch (error) {
     next(error);
@@ -31,14 +32,14 @@ productsTestRouter.get("/randoms", (req, res, next) => {
     if (isNaN(Number(quantity))) {
       res.json({ error: "You send a string, it must be a number" });
     } else {
-      console.log(quantity);
+      logger.info(quantity);
       const child = fork("calc.js");
 
       child.on("message", (result) => {
         if (result == "ready") {
           child.send(Number(quantity));
         } else {
-          console.log("I end here");
+          logger.info("I end here");
           res.json(result);
         }
       });

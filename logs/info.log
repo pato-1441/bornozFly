@@ -1,0 +1,6 @@
+{"level":30,"time":1673546002023,"pid":2664,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:3100/"}
+{"level":30,"time":1673546002024,"pid":2664,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1673546012470,"pid":2664,"hostname":"DESKTOP-OS2JT62","msg":"Ruta:/, metodo: GET"}
+{"level":30,"time":1673546035061,"pid":15088,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:3100/"}
+{"level":30,"time":1673546035061,"pid":15088,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1673546039816,"pid":15088,"hostname":"DESKTOP-OS2JT62","msg":"Ruta: \"/\", metodo: \"GET\""}
