@@ -32,7 +32,8 @@ const args = minimist(process.argv.slice(2), {
   },
 });
 
-const { PORT, MODE } = args;
+const { MODE } = args;
+const PORT = process.env.PORT
 
 if (MODE === "cluster" && cluster.isPrimary) {
   const length = os.cpus().length;
@@ -112,7 +113,7 @@ if (MODE === "cluster" && cluster.isPrimary) {
 
   server.listen(PORT, async () => {
     logger.info(
-      "Your app is listening on " + `${process.env.NODE_URL}:${PORT}/`
+      "Your app is listening on " + `${process.env.NODE_URL}:${process.env.PORT}/`
     );
     logger.info("Environment: " + process.env.NODE_ENV);
   });
