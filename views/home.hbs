@@ -1,4 +1,4 @@
-<div class="navbar bg-zinc-900 px-20">
+<div class="navbar bg-zinc-900 px-5 sm:px-20">
   <div class="flex-1 text-white">
     <div class="mr-2">
       <svg
@@ -63,15 +63,14 @@
             <span class="badge">New</span>
           </a>
         </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li><a onclick="location.href = '/logout'">Logout</a></li>
       </ul>
     </div>
   </div>
 </div>
 <div class="flex justify-center">
   <div
-    class="sm:m-10 w-full sm:w-3/4 bg-gray-800 p-5 pt-20 sm:p-10 sm:rounded-box h-fit"
+    class="sm:m-10 w-full sm:w-3/4 bg-bg-zinc-900 p-5 sm:rounded-box h-fit"
   >
     <!--WELCOME-->
     <section>
@@ -82,11 +81,6 @@
           ¡Welcome
           <span id="username">{{username}}!</span>
         </h1>
-        <input
-          class="btn border-none bg-amber-900 hover:bg-amber-700 text-white px-0"
-          onclick="location.href = '/logout'"
-          value="Logout"
-        />
       </div>
     </section>
     <!--FIN WELCOME-->
