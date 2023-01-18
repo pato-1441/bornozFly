@@ -69,21 +69,26 @@
   </div>
 </div>
 <div class="flex justify-center">
-  <div
-    class="sm:m-10 w-full sm:w-3/4 bg-bg-zinc-900 p-5 sm:rounded-box h-fit"
-  >
-    <!--WELCOME-->
-    <section>
-      <div
-        class="flex justify-between font-semibold rounded-box bg-yellow-500 items-center px-5 py-3 mb-5"
-      >
-        <h1 class="text-3xl text-amber-900">
-          ¡Welcome
-          <span id="username">{{username}}!</span>
-        </h1>
+  <div class="toast toast-end z-10">
+    <div class="alert shadow-lg">
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="stroke-current flex-shrink-0 h-6 w-6 text-green-400"
+          fill="none"
+          viewBox="0 0 24 24"
+        ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path></svg>
+        <spa class="text-white">¡Succesfully logged in
+          <span id="username">{{username}}!</span></spa>
       </div>
-    </section>
-    <!--FIN WELCOME-->
+    </div>
+  </div>
+  <div class="sm:m-10 w-full sm:w-3/4 bg-bg-zinc-900 p-5 sm:rounded-box h-fit">
     <!--PRODUCTOS FORM / TABLE-->
     <section class="text-white">
       <h2 class="text-2xl">Products</h2>
