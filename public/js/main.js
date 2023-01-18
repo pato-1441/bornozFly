@@ -29,21 +29,21 @@
     e.preventDefault();
     socket.emit("message", {
       author: {
-        name: usernameAlias.value
+        name: usernameAlias.value,
       },
       text: messageInput.value,
       date: {
         day: new Date().toLocaleDateString(),
         hours: new Date().getHours(),
         minutes: new Date().getMinutes(),
-        milliseconds: new Date().getMilliseconds()
-      }
-    })
-    messageInput.value = '';
+        milliseconds: new Date().getMilliseconds(),
+      },
+    });
+    messageInput.value = "";
   });
 
   socket.on("connect", () => {
-    console.log("Connection to the server established");
+    console.log("Connection to the server established ✅");
   });
 
   socket.on("product", (data) => {
