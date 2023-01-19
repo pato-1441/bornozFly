@@ -1,12 +1,45 @@
-<div class="flex justify-center text-white">
+<div class="w-full flex flex-col justify-between items-center h-screen">
   <div
-    class="bg-rose-700 flex flex-col mt-10 w-1/4 p-10 text-center rounded-box"
+    class="flex flex-col sm:w-1/4 p-10 gap-20 rounded-box"
   >
-    <h1 class="text-2xl">Something wrong has happened! :C</h1>
-    <input
-      class="btn btn-warning bg-yellow-500 mt-5"
+    <h1 class="text-5xl">Something <br>wrong happened!</h1>
+    <button
+      class="btn btn-warning bg-yellow-500"
       onclick="location.href='/'"
-      value="Go back"
-    />
+    >Go back</button>
   </div>
+  <div
+      class="w-full mb-10 bg-zinc-900 text-3xl text-white flex flex-col justify-center items-center gap-4"
+    >
+      <div class="flex items-center">
+        <div class="mr-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-7 h-7"
+          >
+            <path
+              d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"
+            ></path>
+          </svg>
+        </div>
+        <p class="font-light">Bornoz</p>
+        <p class="font-semibold">Fly</p>
+      </div>
+      <div class="flex gap-2 text-gray-400 text-sm">
+        <div><a
+            class="hover:text-white"
+            href="https://www.linkedin.com/in/patoalbornoz/"
+            target="_blank"
+            rel="noopener noreferrer"
+          ><i class="fa-brands fa-linkedin"></i> LinkedIn</a></div>
+        <div><a
+            class="hover:text-white"
+            href="https://github.com/pato-1441"
+            target="_blank"
+            rel="noopener noreferrer"
+          ><i class="fa-brands fa-github"></i> Github</a></div>
+      </div>
+    </div>
 </div>
