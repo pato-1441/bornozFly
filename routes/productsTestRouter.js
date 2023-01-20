@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { faker } from "@faker-js/faker";
-import logger from "../logger.js";
+import logger from ".././helpers/logger.js";
 
 faker.locale = "es";
 const { commerce, image } = faker;

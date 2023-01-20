@@ -1,6 +1,24 @@
 import { Router } from "express";
 import passport from "passport";
-import Authenticated from "../middlewares/authenticate.js"
+import Authenticated from "../middlewares/authenticate.js";
+import { createTransport } from "nodemailer";
+import { mailConfig } from "../helpers/mailConfig.js";
+
+const transporter = nodemailer.createTransport({
+  host: "smtp.ethereal.email",
+  port: 587,
+  auth: {
+    user: mailConfig.user,
+    pass: mailConfig.password,
+  },
+});
+
+const mailOptions = {
+  from: "Bornoz Fly",
+  to: mailConfig.user,
+  subject: "Trying nodemailer from Node.js",
+  html: "<h1>This is a test of nodemailer sending an mail from node.js</h1>"
+}
 
 const passportAuthsRouter = Router();
 
@@ -10,7 +28,7 @@ passportAuthsRouter.get("/signup-error", (req, res) => {
   res.render("signup-error", {});
 });
 passportAuthsRouter.get("/login-error", (req, res) => {
-  res.render("login-error", {})
+  res.render("login-error", {});
 });
 
 passportAuthsRouter.get("/signup", (req, res) => {
@@ -19,10 +37,12 @@ passportAuthsRouter.get("/signup", (req, res) => {
 
 passportAuthsRouter.get("/logout", (req, res) => {
   const { username } = req.user;
-  req.logout((err)=>{
-    if(err){return err}
-    res.render('logout', {username})
-  })  
+  req.logout((err) => {
+    if (err) {
+      return err;
+    }
+    res.render("logout", { username });
+  });
   /* req.logout();
   res.render("logout", { username }); */
 });
@@ -39,8 +59,14 @@ passportAuthsRouter.get("/", Authenticated, (req, res) => {
 passportAuthsRouter.post(
   "/login",
   passport.authenticate("login", { failureRedirect: "/login-error" }),
-  (req, res) => {
-    res.redirect("/");
+  async (req, res) => {
+    try {
+      const info = await transporter.sendMail(mailOptions)
+      console.log(info);
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+    }
   }
 );
 
