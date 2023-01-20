@@ -1,24 +1,6 @@
 import { Router } from "express";
 import passport from "passport";
 import Authenticated from "../middlewares/authenticate.js";
-import { createTransport } from "nodemailer";
-import { mailConfig } from "../helpers/mailConfig.js";
-
-const transporter = createTransport({
-  host: "smtp.ethereal.email",
-  port: 587,
-  auth: {
-    user: mailConfig.user,
-    pass: mailConfig.password,
-  },
-});
-
-const mailOptions = {
-  from: "Bornoz Fly",
-  to: mailConfig.user,
-  subject: "Trying nodemailer from Node.js",
-  html: "<h1>This is a test of nodemailer sending an mail from node.js</h1>"
-}
 
 const passportAuthsRouter = Router();
 
@@ -59,14 +41,8 @@ passportAuthsRouter.get("/", Authenticated, (req, res) => {
 passportAuthsRouter.post(
   "/login",
   passport.authenticate("login", { failureRedirect: "/login-error" }),
-  async (req, res) => {
-    try {
-      const info = await transporter.sendMail(mailOptions)
-      console.log(info);
-      res.redirect("/");
-    } catch (error) {
-      console.log(error);
-    }
+  (req, res) => {
+    res.redirect("/");
   }
 );
 

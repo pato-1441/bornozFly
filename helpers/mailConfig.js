@@ -1,5 +1,5 @@
 export const mailConfig = {
-  name: "Geo Weimann",
-  user: "geo.weimann@ethereal.email",
-  password: "mr5b4qw8hu6bjy89WD"
+  name: "Bornoz Fly",
+  user: "albornozpatricio2004@gmail.com",
+  password: "kyiogwbyqiexxtah"
 }
