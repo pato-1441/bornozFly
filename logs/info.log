@@ -37,3 +37,16 @@
 {"level":30,"time":1674227355750,"pid":7392,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
 {"level":30,"time":1674227355750,"pid":7392,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
 {"level":30,"time":1674227373172,"pid":7392,"hostname":"DESKTOP-OS2JT62","accepted":["albornozpatricio2004@gmail.com"],"rejected":[],"ehlo":["SIZE 35882577","8BITMIME","AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH","ENHANCEDSTATUSCODES","PIPELINING","CHUNKING","SMTPUTF8"],"envelopeTime":499,"messageTime":478,"messageSize":320,"response":"250 2.0.0 OK  1674227374 d144-20020a4a5296000000b004f269f9b8f3sm12107207oob.25 - gsmtp","envelope":{"from":"","to":["albornozpatricio2004@gmail.com"]},"messageId":"<e26a5a47-ee57-77d4-adf5-2d5f6d09da68@localhost>"}
+{"level":30,"time":1674230644918,"pid":3000,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674230644918,"pid":3000,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674230710892,"pid":11892,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674230710892,"pid":11892,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674231048383,"pid":7068,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674231048384,"pid":7068,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674231100942,"pid":7828,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674231100942,"pid":7828,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674231317670,"pid":404,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674231317670,"pid":404,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674231452629,"pid":4384,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674231452629,"pid":4384,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674231464998,"pid":4384,"hostname":"DESKTOP-OS2JT62","accepted":["albornozpatricio2004@gmail.com"],"rejected":[],"ehlo":["SIZE 35882577","8BITMIME","AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH","ENHANCEDSTATUSCODES","PIPELINING","CHUNKING","SMTPUTF8"],"envelopeTime":559,"messageTime":630,"messageSize":319,"response":"250 2.0.0 OK  1674231465 p8-20020a9d6948000000b00684152e9ff2sm5486041oto.0 - gsmtp","envelope":{"from":"","to":["albornozpatricio2004@gmail.com"]},"messageId":"<a15591d0-9fd0-2871-60db-65c18a6ec12a@localhost>"}
