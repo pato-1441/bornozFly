@@ -4,7 +4,7 @@ import Authenticated from "../middlewares/authenticate.js";
 import { createTransport } from "nodemailer";
 import { mailConfig } from "../helpers/mailConfig.js";
 
-const transporter = nodemailer.createTransport({
+const transporter = createTransport({
   host: "smtp.ethereal.email",
   port: 587,
   auth: {

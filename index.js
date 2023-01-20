@@ -19,7 +19,7 @@ import cluster from "cluster";
 import { initServer } from "./socket.js";
 import http from "http";
 import bodyParser from "body-parser";
-import logger from "./logger.js"
+import logger from "./helpers/logger.js"
 
 const args = minimist(process.argv.slice(2), {
   alias: {
