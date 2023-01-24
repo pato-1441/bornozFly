@@ -6,15 +6,18 @@ const passportAuthsRouter = Router();
 
 // get
 
-passportAuthsRouter.get("/signup-error", (req, res) => {
-  res.render("signup-error", {});
-});
-passportAuthsRouter.get("/login-error", (req, res) => {
-  res.render("login-error", {});
+// login
+
+passportAuthsRouter.get("/login", Authenticated, (req, res) => {
+  res.render("login");
 });
 
-passportAuthsRouter.get("/signup", (req, res) => {
-  res.render("signup");
+passportAuthsRouter.get("/", Authenticated, (req, res) => {
+  res.redirect("login");
+});
+
+passportAuthsRouter.get("/login-error", (req, res) => {
+  res.render("login-error", {});
 });
 
 passportAuthsRouter.get("/logout", (req, res) => {
@@ -29,14 +32,23 @@ passportAuthsRouter.get("/logout", (req, res) => {
   res.render("logout", { username }); */
 });
 
-passportAuthsRouter.get("/login", Authenticated, (req, res) => {
-  res.render("login");
-});
-passportAuthsRouter.get("/", Authenticated, (req, res) => {
-  res.redirect("login");
+// signup
+
+passportAuthsRouter.get("/signup", (req, res) => {
+  res.render("signup");
 });
 
-//post
+passportAuthsRouter.get("/signup-error", (req, res) => {
+  res.render("signup-error", {});
+});
+
+// profile
+
+passportAuthsRouter.get("/profile", Authenticated, (req, res) => {
+  res.render("profile");
+});
+
+// post
 
 passportAuthsRouter.post(
   "/login",
