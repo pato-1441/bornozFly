@@ -36,9 +36,10 @@ const signup = (req, username, password, cb) => {
       console.log("User already exists.");
       return cb(null, false);
     } else {
-      try {        
+      try {
         const newUser = new User();
         newUser.username = username;
+        newUser.mail = username;
         newUser.password = createHash(password);
         newUser
           .save()
