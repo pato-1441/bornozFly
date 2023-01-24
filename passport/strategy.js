@@ -39,7 +39,6 @@ const signup = (req, username, password, cb) => {
       try {
         const newUser = new User();
         newUser.username = username;
-        newUser.mail = username;
         newUser.password = createHash(password);
         newUser
           .save()
