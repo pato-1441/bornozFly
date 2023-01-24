@@ -144,7 +144,7 @@ export const sendMail = async (user) => {
     <tr>
       <td class="v-text-align" style="padding-right: 0px;padding-left: 0px;" align="center">
         
-        <img align="center" border="0" src=${image6} alt="Logo" title="Logo" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 50%;max-width: 290px;" width="290" class="v-src-width v-src-max-width"/>
+        <img align="center" border="0" src="https://raw.githubusercontent.com/pato-1441/bornozFly/main/public/image-6.png" alt="Logo" title="Logo" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 50%;max-width: 290px;" width="290" class="v-src-width v-src-max-width"/>
         
       </td>
     </tr>
@@ -168,8 +168,8 @@ export const sendMail = async (user) => {
   
   <div class="u-row-container" style="padding: 0px;background-color: transparent">
     <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
-      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url(${image4});background-repeat: no-repeat;background-position: center top;background-color: transparent;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-image: url(${image4});background-repeat: no-repeat;background-position: center top;background-color: transparent;"><![endif]-->
+      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url("https://raw.githubusercontent.com/pato-1441/bornozFly/main/public/image-4.png");background-repeat: no-repeat;background-position: center top;background-color: transparent;">
+        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-image: url("https://raw.githubusercontent.com/pato-1441/bornozFly/main/public/image-4.png");background-repeat: no-repeat;background-position: center top;background-color: transparent;"><![endif]-->
         
   <!--[if (mso)|(IE)]><td align="center" width="600" style="background-color: #ffffff;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
   <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
@@ -285,8 +285,8 @@ export const sendMail = async (user) => {
   
   <div class="u-row-container" style="padding: 0px;background-color: transparent">
     <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
-      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url(${image5});background-repeat: no-repeat;background-position: center top;background-color: transparent;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-image: url(${image5});background-repeat: no-repeat;background-position: center top;background-color: transparent;"><![endif]-->
+      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url("https://raw.githubusercontent.com/pato-1441/bornozFly/main/public/image-5.png");background-repeat: no-repeat;background-position: center top;background-color: transparent;">
+        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-image: url("https://raw.githubusercontent.com/pato-1441/bornozFly/main/public/image-5.png");background-repeat: no-repeat;background-position: center top;background-color: transparent;"><![endif]-->
         
   <!--[if (mso)|(IE)]><td align="center" width="300" style="background-color: #f1c40f;width: 300px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
   <div class="u-col u-col-50" style="max-width: 320px;min-width: 300px;display: table-cell;vertical-align: top;">
@@ -321,7 +321,7 @@ export const sendMail = async (user) => {
       <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width: 32px !important;height: 32px !important;display: inline-block;border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 15px">
         <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
           <a href="https://www.linkedin.com/in/patoalbornoz/" title="LinkedIn" target="_blank">
-            <img src=${image2} alt="LinkedIn" title="LinkedIn" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+            <img src="https://raw.githubusercontent.com/pato-1441/bornozFly/main/public/image-2.png" alt="LinkedIn" title="LinkedIn" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
           </a>
         </td></tr>
       </tbody></table>
@@ -331,7 +331,7 @@ export const sendMail = async (user) => {
       <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width: 32px !important;height: 32px !important;display: inline-block;border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 0px">
         <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
           <a href="https://github.com/pato-1441" title="GitHub" target="_blank">
-            <img src=${image1} alt="GitHub" title="GitHub" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+            <img src="https://raw.githubusercontent.com/pato-1441/bornozFly/main/public/image-1.png" alt="GitHub" title="GitHub" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
           </a>
         </td></tr>
       </tbody></table>
@@ -383,8 +383,8 @@ export const sendMail = async (user) => {
   
   <div class="u-row-container" style="padding: 0px;background-color: transparent">
     <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
-      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url(${image3});background-repeat: no-repeat;background-position: center top;background-color: transparent;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-image: url(${image3});background-repeat: no-repeat;background-position: center top;background-color: transparent;"><![endif]-->
+      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url("https://raw.githubusercontent.com/pato-1441/bornozFly/main/public/image-3.png");background-repeat: no-repeat;background-position: center top;background-color: transparent;">
+        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-image: url("https://raw.githubusercontent.com/pato-1441/bornozFly/main/public/image-3.png");background-repeat: no-repeat;background-position: center top;background-color: transparent;"><![endif]-->
         
   <!--[if (mso)|(IE)]><td align="center" width="600" style="background-color: #000000;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
   <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
