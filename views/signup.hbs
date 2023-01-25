@@ -18,6 +18,7 @@
           placeholder="john@doe.com"
           class="input input-bordered w-full bg-inherit text-white"
           type="mail"
+          autofocus
           required
         />
 
@@ -27,6 +28,50 @@
           placeholder="New password"
           class="input input-bordered w-full bg-inherit text-white"
           type="password"
+          required
+        />
+        <div class="flex gap-2">
+          <input
+            id="firstname"
+            name="firstname"
+            placeholder="First name"
+            class="input input-bordered w-1/2 bg-inherit text-white"
+            type="text"
+            required
+          />
+          <input
+            id="lastname"
+            name="lastname"
+            placeholder="Last name"
+            class="input input-bordered w-1/2 bg-inherit text-white"
+            type="text"
+            required
+          />
+        </div>
+        <input
+          id="address"
+          name="address"
+          placeholder="Address"
+          class="input input-bordered w-full bg-inherit text-white"
+          type="text"
+          required
+        />
+        <input
+          id="userage"
+          name="userage"
+          placeholder="Age"
+          class="input input-bordered w-full bg-inherit text-white"
+          type="number"
+          min="18"
+          max="99"
+          required
+        />
+        <input
+          id="mobilenumber"
+          name="mobilenumber"
+          placeholder="Mobile number"
+          class="input input-bordered w-full bg-inherit text-white"
+          type="number"
           required
         />
         <button class="btn btn-secondary" type="submit">Sign up</button>
