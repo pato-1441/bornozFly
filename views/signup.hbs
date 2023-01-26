@@ -15,7 +15,7 @@
         <input
           id="username"
           name="username"
-          placeholder="john@doe.com"
+          placeholder="Mail"
           class="input input-bordered w-full bg-inherit text-white"
           type="mail"
           autofocus
@@ -25,7 +25,7 @@
         <input
           id="password"
           name="password"
-          placeholder="New password"
+          placeholder="Password"
           class="input input-bordered w-full bg-inherit text-white"
           type="password"
           required
@@ -56,14 +56,13 @@
           type="text"
           required
         />
+        <label for="birthday" class="text-base">Birthday</label>
         <input
-          id="userage"
-          name="userage"
-          placeholder="Age"
+          id="birthday"
+          name="birthday"
+          placeholder="Birthday"
           class="input input-bordered w-full bg-inherit text-white"
-          type="number"
-          min="18"
-          max="99"
+          type="date"
           required
         />
         <input
@@ -71,7 +70,7 @@
           name="mobilenumber"
           placeholder="Mobile number"
           class="input input-bordered w-full bg-inherit text-white"
-          type="number"
+          type="tel"
           required
         />
         <button class="btn btn-secondary" type="submit">Sign up</button>

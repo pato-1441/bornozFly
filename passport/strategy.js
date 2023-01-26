@@ -37,14 +37,19 @@ const signup = (req, username, password, cb) => {
       return cb(null, false);
     } else {
       try {
-        const newUser = new User();
+        const newUser = new User();        
         newUser.username = username;
         newUser.password = createHash(password);
+        newUser.firstname = req.body.firstname;
+        newUser.lastname = req.body.lastname;
+        newUser.address = req.body.address;
+        newUser.birthday = req.body.birthday;
+        newUser.mobilenumber = req.body.mobilenumber;
         newUser
           .save()
           .then((datos) => cb(null, datos))
           .catch(null, false);
-        sendMail(username);
+        sendMail(req.body.firstname);
       } catch (error) {
         logger.error(error);
       }
