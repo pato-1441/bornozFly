@@ -5,14 +5,12 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 import handlebars from "express-handlebars";
 import passport from "passport";
-import { Strategy as LocalStrategy } from "passport-local";
 import {
   infoRouter,
   passportAuthsRouter,
   productsTestRouter,
 } from "./routes/index.js";
-import { User } from "./models/user.js";
-import * as strategy from "./passport/strategy.js";
+import { passportInit } from "./passport/init.js";
 import minimist from "minimist";
 import os from "os";
 import cluster from "cluster";
@@ -73,6 +71,7 @@ if (MODE === "cluster" && cluster.isPrimary) {
   app.use(express.urlencoded({ extended: true }));
   app.use(passport.initialize());
   app.use(passport.session());
+  passportInit();
   app.use(express.json());
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(express.static("./public"));
@@ -80,25 +79,6 @@ if (MODE === "cluster" && cluster.isPrimary) {
   app.use("/", passportAuthsRouter);
   app.use("/api", productsTestRouter);
   app.use("/info", infoRouter);
-
-  passport.use(
-    "login",
-    new LocalStrategy({ passReqToCallback: true }, strategy.login)
-  );
-
-  passport.use(
-    "signup",
-    new LocalStrategy({ passReqToCallback: true }, strategy.signup)
-  );
-
-  passport.serializeUser((user, done) => {
-    done(null, user._id);
-  });
-
-  passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => done(err, user));
-  });
-
   app.use((error, req, res, next) => {
     if (error.statusCode) {
       return res.status(error.statusCode).send(`Error ${error.statusCode}`);
