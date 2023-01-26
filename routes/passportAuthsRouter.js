@@ -1,5 +1,6 @@
 import { Router } from "express";
 import passport from "passport";
+import { twilioService } from "../helpers/twilioConfig.js";
 import Authenticated from "../middlewares/authenticate.js";
 
 const passportAuthsRouter = Router();
@@ -66,5 +67,10 @@ passportAuthsRouter.post(
     res.redirect("/");
   }
 );
+
+passportAuthsRouter.post("/createorder", Authenticated, (req, res) => {
+  twilioService.sendWhatsapp(req.body);
+  res.redirect("/");
+});
 
 export default passportAuthsRouter;
