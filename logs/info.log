@@ -51,3 +51,17 @@
 {"level":30,"time":1674731744947,"pid":10632,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
 {"level":30,"time":1674731744947,"pid":10632,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
 {"level":30,"time":1674731767051,"pid":10632,"hostname":"DESKTOP-OS2JT62","accepted":["albornozpatricio2004@gmail.com"],"rejected":[],"ehlo":["SIZE 35882577","8BITMIME","AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH","ENHANCEDSTATUSCODES","PIPELINING","CHUNKING","SMTPUTF8"],"envelopeTime":611,"messageTime":694,"messageSize":28404,"response":"250 2.0.0 OK  1674731767 z12-20020a056870514c00b0014435b51ef7sm365850oak.30 - gsmtp","envelope":{"from":"","to":["albornozpatricio2004@gmail.com"]},"messageId":"<360b515a-9e37-7e31-d757-6982329fe286@localhost>"}
+{"level":30,"time":1674732042785,"pid":1940,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674732042785,"pid":1940,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674733765967,"pid":11580,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674733765967,"pid":11580,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674733823359,"pid":3160,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674733823360,"pid":3160,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674733911437,"pid":12236,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674733911437,"pid":12236,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674733938221,"pid":4460,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674733938221,"pid":4460,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674733996333,"pid":13564,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674733996333,"pid":13564,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674734111032,"pid":9812,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674734111032,"pid":9812,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}

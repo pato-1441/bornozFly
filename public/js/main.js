@@ -20,6 +20,7 @@
   const messageOutput = document.getElementById("messageOutput");
   const socket = io();
 
+  /*
   productForm.onsubmit = (e) => {
     e.preventDefault();
     socket.emit("product", {
@@ -28,7 +29,9 @@
       url: productUrlInput.value,
     });
   };
+  */
 
+  /*
   messageForm.addEventListener("submit", (e) => {
     e.preventDefault();
     socket.emit("message", {
@@ -45,6 +48,7 @@
     });
     messageInput.value = "";
   });
+  */
 
   socket.on("connect", () => {
     console.log("Connection to the server established ✅");

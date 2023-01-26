@@ -21,12 +21,12 @@ passportAuthsRouter.get("/login-error", (req, res) => {
 });
 
 passportAuthsRouter.get("/logout", (req, res) => {
-  const { username } = req.user;
+  const { firstname } = req.user;
   req.logout((err) => {
     if (err) {
       return err;
     }
-    res.render("logout", { username });
+    res.render("logout", { firstname });
   });
   /* req.logout();
   res.render("logout", { username }); */
