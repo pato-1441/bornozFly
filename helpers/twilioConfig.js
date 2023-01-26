@@ -23,11 +23,14 @@ const sendWhatsapp = async (req) => {
   console.log(req.user, req.order);
   try {
     const message = await client.messages.create({
-      body: `Nuevo pedido de ${req.order.products}
-      Realizado por: ${req.user.firstname} - ${req.user.username}`,
-      mediaUrl: [
-        "https://raw.githubusercontent.com/pato-1441/bornozFly/main/public/image-6.png",
-      ],
+      body: `
+            Nuevo pedido de:
+            
+            *${req.order.products}*
+
+            Realizado por:
+            _${req.user.firstname} - ${req.user.username}_
+            `,
       from: "whatsapp:+14155238886",
       to: `whatsapp:${process.env.DEV_WHATSAPP_NUMBER}`,
     });
