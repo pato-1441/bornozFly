@@ -14,7 +14,7 @@
         "url": "git+https://github.com/pato-1441/bornozFly.git"
     },
     "homepage": "https://github.com/pato-1441/bornozFly#readme",
-    "dependencies": {        
+    "dependencies": {
         "bcrypt": "^5.1.0",
         "compression": "^1.7.4",
         "connect-mongo": "^4.6.0",
@@ -31,13 +31,14 @@
         "passport-local": "^1.0.0",
         "pino": "^8.8.0",
         "pino-pretty": "^9.1.1",
-        "socket.io": "^4.5.3"
+        "socket.io": "^4.5.3",
+        "twilio": "^4.0.0"
     },
     "license": "ISC",
     "devDependencies": {
+        "@faker-js/faker": "^7.6.0",
         "artillery": "^2.0.0-27",
         "autocannon": "^7.10.0",
-        "@faker-js/faker": "^7.6.0",
         "dotenv": "^16.0.3",
         "nodemon": "^2.0.20"
     }
