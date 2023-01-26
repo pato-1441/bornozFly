@@ -94,132 +94,171 @@
     </button>
   </div>
   <div class="sm:m-10 w-full sm:w-3/4 bg-bg-zinc-900 p-5 sm:rounded-box h-fit">
-    <!--PRODUCTOS FORM / TABLE-->
+    <!--PERFIL DATOS USUARIO-->
     <section class="text-white">
-      <h2 class="text-2xl">Products</h2>
-      <form class="form-control flex gap-3" id="enviarProducto">
+      <h2 class="text-2xl mb-4">My profile</h2>
+      <div class="rounded-lg bg-base-100 w-full p-4 grid grid-cols-4">
         <div>
-          <label class="label">
-            <span class="label-text">Product name</span>
-          </label>
-          <label class="input-group">
-            <span>Name</span>
-            <input
-              type="text"
-              placeholder="Book"
-              class="input input-bordered w-full"
-              id="nombreProducto"
-            />
-          </label>
+          <p class="font-semibold text-xl">Username / Mail:</p>
+          <p class="text-lg">{{username}}</p>
         </div>
         <div>
-          <label class="label">
-            <span class="label-text">Enter amount</span>
-          </label>
-          <label class="input-group">
-            <span>Price</span>
-            <input
-              type="number"
-              placeholder="10"
-              class="input input-bordered w-full"
-              id="precioProducto"
-            />
-          </label>
+          <p class="font-semibold text-xl">Firstname:</p>
+          <p class="text-lg">{{firstname}}</p>
         </div>
         <div>
-          <label class="label">
-            <span class="label-text">Thumbnail URL</span>
-          </label>
-          <label class="input-group">
-            <span>URL</span>
-            <input
-              type="text"
-              placeholder="https://smartmobilestudio.com/wp-content/uploads/2012/06/leather-book-preview.png"
-              class="input input-bordered w-full"
-              id="urlProducto"
-            />
-          </label>
+          <p class="font-semibold text-xl">Lastname:</p>
+          <p class="text-lg">{{username}}</p>
         </div>
-        <div class="flex">
-          <input
-            type="submit"
-            class="btn border-none bg-blue-500 text-white"
-            value="Submit"
-          />
+        <div>
+          <p class="font-semibold text-xl">Address:</p>
+          <p class="text-lg">{{address}}</p>
         </div>
-      </form>
-      <div class="overflow-x-auto">
-        <table
-          class="table table-compact sm:table-normal w-full my-5 text-center"
-        >
-          <!-- head -->
-          <thead class="text-white">
-            <tr>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Picture</th>
-            </tr>
-          </thead>
-          <tbody id="products"></tbody>
-        </table>
+        <div>
+          <p class="font-semibold text-xl">Birthday:</p>
+          <p class="text-lg">{{birthday}}</p>
+        </div>
+        <div>
+          <p class="font-semibold text-xl">Phone:</p>
+          <p class="text-lg">{{phone}}</p>
+        </div>
       </div>
     </section>
+
+    <!--PRODUCTOS FORM / TABLE-->
+
+    {{!--
+      <section class="text-white">
+        <h2 class="text-2xl">Products</h2>
+        <form class="form-control flex gap-3" id="enviarProducto">
+          <div>
+            <label class="label">
+              <span class="label-text">Product name</span>
+            </label>
+            <label class="input-group">
+              <span>Name</span>
+              <input
+                type="text"
+                placeholder="Book"
+                class="input input-bordered w-full"
+                id="nombreProducto"
+              />
+            </label>
+          </div>
+          <div>
+            <label class="label">
+              <span class="label-text">Enter amount</span>
+            </label>
+            <label class="input-group">
+              <span>Price</span>
+              <input
+                type="number"
+                placeholder="10"
+                class="input input-bordered w-full"
+                id="precioProducto"
+              />
+            </label>
+          </div>
+          <div>
+            <label class="label">
+              <span class="label-text">Thumbnail URL</span>
+            </label>
+            <label class="input-group">
+              <span>URL</span>
+              <input
+                type="text"
+                placeholder="https://smartmobilestudio.com/wp-content/uploads/2012/06/leather-book-preview.png"
+                class="input input-bordered w-full"
+                id="urlProducto"
+              />
+            </label>
+          </div>
+          <div class="flex">
+            <input
+              type="submit"
+              class="btn border-none bg-blue-500 text-white"
+              value="Submit"
+            />
+          </div>
+        </form>
+        <div class="overflow-x-auto">
+          <table
+            class="table table-compact sm:table-normal w-full my-5 text-center"
+          >
+            <!-- head -->
+            <thead class="text-white">
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Picture</th>
+              </tr>
+            </thead>
+            <tbody id="products"></tbody>
+          </table>
+        </div>
+      </section>    
+    --}}
+
     <!--FIN PRODUCTOS FORM / TABLE-->
     <!--COMIENZA CHAT FORM / DISPLAY-->
-    <section class="text-white flex flex-col gap-3">
-      <h2 class="text-2xl">Chat</h2>
-      <!--form message-->
-      <div>
-        <form
-          class="flex flex-col sm:flex-row items-center text-black gap-3"
-          id="enviarMensaje"
-          action="#"
-        >
-          <input
-            class="text-black p-2 bg-white input input-bordered"
-            required
-            type="text"
-            placeholder="Your username..."
-            name="usernameAlias"
-            id="usernameAlias"
-          />
-          <input
-            class="text-black p-2 bg-white input input-bordered"
-            required
-            type="text"
-            placeholder="Your message..."
-            name="message"
-            id="messageInput"
-          />
-          <button
-            class="btn border-none bg-purple-700"
-            type="submit"
-            value="Send"
+
+    {{!--
+      <section class="text-white flex flex-col gap-3">
+        <h2 class="text-2xl">Chat</h2>
+        <!--form message-->
+        <div>
+          <form
+            class="flex flex-col sm:flex-row items-center text-black gap-3"
+            id="enviarMensaje"
+            action="#"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-5 h-5 text-white"
+            <input
+              class="text-black p-2 bg-white input input-bordered"
+              required
+              type="text"
+              placeholder="Your username..."
+              name="usernameAlias"
+              id="usernameAlias"
+            />
+            <input
+              class="text-black p-2 bg-white input input-bordered"
+              required
+              type="text"
+              placeholder="Your message..."
+              name="message"
+              id="messageInput"
+            />
+            <button
+              class="btn border-none bg-purple-700"
+              type="submit"
+              value="Send"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-              ></path>
-            </svg>
-          </button>
-        </form>
-      </div>
-      <!--termina form message-->
-      <div class="max-h-96 overflow-x-auto">
-        <div class="w-full rounded-lg bg-gray-200 text-black p-6 max-h-full">
-          <ul id="messageOutput" class="flex flex-col gap-2 items-end"></ul>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5 text-white"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+                ></path>
+              </svg>
+            </button>
+          </form>
         </div>
-      </div>
-    </section>
+        <!--termina form message-->
+        <div class="max-h-96 overflow-x-auto">
+          <div class="w-full rounded-lg bg-gray-200 text-black p-6 max-h-full">
+            <ul id="messageOutput" class="flex flex-col gap-2 items-end"></ul>
+          </div>
+        </div>
+      </section>
+    --}}
+
     <!--TERMINA CHAT FORM / DISPLAY-->
   </div>
 </div>
