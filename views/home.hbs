@@ -73,7 +73,8 @@
   </div>
 </div>
 <div class="flex justify-center">
-  <div class="toast toast-end z-10">
+  <div class="toast toast-end z-10" id="toastLogin">
+    <button onclick="toastLogin.classList.add('hidden')">
     <div class="alert shadow-lg">
       <div>
         <svg
@@ -90,6 +91,7 @@
         <span class="text-white">¡Succesfully logged in!</span>
       </div>
     </div>
+    </button>
   </div>
   <div class="sm:m-10 w-full sm:w-3/4 bg-bg-zinc-900 p-5 sm:rounded-box h-fit">
     <!--PRODUCTOS FORM / TABLE-->

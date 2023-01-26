@@ -1,6 +1,10 @@
 (() => {
-  // User
-  const username = document.getElementById("username");
+  // Toast
+
+  const toastLogin = document.getElementById("toastLogin");
+  setTimeout(()=>{
+    toastLogin.classList.add('hidden')
+  },4000);
 
   // Products
   const productNameInput = document.getElementById("nombreProducto");
