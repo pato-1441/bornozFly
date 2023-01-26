@@ -18,6 +18,7 @@ import { initServer } from "./socket.js";
 import http from "http";
 import bodyParser from "body-parser";
 import logger from "./helpers/logger.js";
+import { twilioService } from "./helpers/twilioConfig.js";
 
 const args = minimist(process.argv.slice(2), {
   alias: {
@@ -86,6 +87,7 @@ if (MODE === "cluster" && cluster.isPrimary) {
     logger.info(error);
     res.status(500).json({ error: "Somethings brokes..." });
   });
+  //twilioService.sendSMS()
 
   // listen for requests :)
   const server = http.createServer(app);

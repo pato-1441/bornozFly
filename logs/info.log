@@ -176,3 +176,5 @@
 {"level":30,"time":1674757816039,"pid":14956,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
 {"level":30,"time":1674758363407,"pid":13672,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
 {"level":30,"time":1674758363407,"pid":13672,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1674773690621,"pid":15864,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1674773690622,"pid":15864,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
