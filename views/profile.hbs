@@ -1,4 +1,35 @@
-<div class="flex flex-col text-center">
-  <h2 class="text-xl">Profile</h2>
-  <p>{{username}}</p>
+<section class="text-white">
+  <h2 class="text-2xl mb-4">My profile</h2>
+  <div
+    class="rounded-lg bg-base-100 w-full p-4 grid grid-cols-1 sm:grid-cols-4 gap-4"
+  >
+    <div>
+      <p class="font-semibold text-xl">Username / mail:</p>
+      <p class="text-lg">{{username}}</p>
+    </div>
+    <div>
+      <p class="font-semibold text-xl">Password:</p>
+      <p class="text-lg">••••••••</p>
+    </div>
+    <div>
+      <p class="font-semibold text-xl">Firstname:</p>
+      <p class="text-lg">{{firstname}}</p>
+    </div>
+    <div>
+      <p class="font-semibold text-xl">Lastname:</p>
+      <p class="text-lg">{{lastname}}</p>
+    </div>
+    <div>
+      <p class="font-semibold text-xl">Address:</p>
+      <p class="text-lg">{{address}}</p>
+    </div>
+    <div>
+      <p class="font-semibold text-xl">Birthday:</p>
+      <p class="text-lg">{{birthday}}</p>
+    </div>
+    <div>
+      <p class="font-semibold text-xl">Phone:</p>
+      <p class="text-lg">{{phone}}</p>
+    </div>
   </div>
+</section>

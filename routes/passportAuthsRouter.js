@@ -44,7 +44,7 @@ passportAuthsRouter.get("/signup-error", (req, res) => {
 
 // profile
 
-passportAuthsRouter.get("/profile/edit", Authenticated, (req, res) => {
+passportAuthsRouter.get("/profile/", Authenticated, (req, res) => {
   const { username } = req.user;
   res.render("profile", { username });
 });
