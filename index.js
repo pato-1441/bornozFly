@@ -17,7 +17,7 @@ import cluster from "cluster";
 import { initServer } from "./socket.js";
 import http from "http";
 import bodyParser from "body-parser";
-import logger from "./helpers/logger.js"
+import logger from "./helpers/logger.js";
 
 const args = minimist(process.argv.slice(2), {
   alias: {
@@ -31,7 +31,7 @@ const args = minimist(process.argv.slice(2), {
 });
 
 const { MODE } = args;
-const PORT = process.env.PORT
+const PORT = process.env.PORT;
 
 if (MODE === "cluster" && cluster.isPrimary) {
   const length = os.cpus().length;
@@ -93,7 +93,8 @@ if (MODE === "cluster" && cluster.isPrimary) {
 
   server.listen(PORT, async () => {
     logger.info(
-      "Your app is listening on " + `${process.env.NODE_URL}:${process.env.PORT}/`
+      "Your app is listening on " +
+        `${process.env.NODE_URL}:${process.env.PORT}/`
     );
     logger.info("Environment: " + process.env.NODE_ENV);
   });
