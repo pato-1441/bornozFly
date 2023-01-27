@@ -34,6 +34,10 @@ const setEvents = (io) => {
       emit("flight-history", await FlightsDB.readFlights());
     }
 
+    socketClient.on("orderselectchange", async (data) => {
+      emit("flight-dates", await FlightsDB.readFlightDate(data));
+    })
+
     socketClient.on("disconnection", () => {
       console.log(
         "The client with the ID: ",
