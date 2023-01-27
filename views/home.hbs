@@ -181,7 +181,11 @@
               <label class="label" for="orderFlightSelect"><span
                   class="label-text"
                 >Pick your flight</span></label>
-              <select class="select select-bordered w-full" id="orderFlightSelect" onchange="orderFlightSelectChange()">
+              <select
+                class="select select-bordered border-gray-600 w-full"
+                id="orderFlightSelect"
+                onchange="orderFlightSelectChange()"
+              >
                 <option disabled selected>Pick one</option>
               </select>
             </div>
@@ -189,18 +193,23 @@
               <label class="label" for="orderFlightDate"><span
                   class="label-text"
                 >Date</span></label>
-              <select class="select select-bordered w-full" id="orderFlightDate">
+              <select
+                class="select select-bordered border-gray-600 w-full"
+                id="orderFlightDate"
+              >
                 <option disabled selected>When you'll fly?</option>
               </select>
             </div>
             <div class="w-1/3">
               <label class="label" for="orderFlightPrice">
-                <span class="label-text">How many you'll
-                  need?</span>
+                <span class="label-text">Price</span>
               </label>
-              <select class="select select-bordered w-full" id="orderFlightPrice">
-                <option disabled selected>Choose quantity</option>
-              </select>
+              <div
+                class="flex w-full border border-gray-600 rounded-lg items-center h-12 pl-4 text-sm font-semibold"
+                id="orderFlightPrice"
+              >
+                <p>Select a flight</p>
+              </div>
             </div>
           </div>
           <div class="divider"></div>
