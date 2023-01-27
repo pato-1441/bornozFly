@@ -57,7 +57,7 @@ class Flights extends DB {
     return await super.getData();
   }
 
-  async readFlightDate(name) {
+  async readFlightByName(name) {
     return await this.schema.find({ name: name });
   }
 }

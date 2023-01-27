@@ -78,13 +78,15 @@ socket.on("flight-history", (flights) => {
 });
 
 // available date of flights
-socket.on("flight-dates", (flight) => {
+socket.on("flight-name", (flight) => {
   console.log(flight[0].dates);
   fetch("/templates/flightDateLayout.hbs")
     .then((template) => template.text())
     .then((text) => {
       const template = Handlebars.compile(text);
+      orderFlightDate.innerHTML = "";
       flight[0].dates.forEach((el) => {
+        console.log(el);
         const option = document.createElement("option");
         option.innerHTML = template(el);
         orderFlightDate.appendChild(option);
@@ -93,16 +95,16 @@ socket.on("flight-dates", (flight) => {
 });
 
 // available flights quantity
-socket.on("flight-history", (flights) => {
+socket.on("flight-name", (flight) => {
+  console.log(flight[0].price);
   fetch("/templates/flightQuantityLayout.hbs")
     .then((template) => template.text())
     .then((text) => {
+      orderFlightQuantity.innerHTML = "";
       const template = Handlebars.compile(text);
-      flights.forEach((el) => {
-        const option = document.createElement("option");
-        option.innerHTML = template(el);
-        orderFlightQuantity.appendChild(option);
-      });
+      const option = document.createElement("option");
+      option.innerHTML =`$${flight[0].price}`;
+      orderFlightQuantity.appendChild(option);
     });
 });
 

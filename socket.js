@@ -35,7 +35,7 @@ const setEvents = (io) => {
     }
 
     socketClient.on("orderselectchange", async (data) => {
-      emit("flight-dates", await FlightsDB.readFlightDate(data));
+      emit("flight-name", await FlightsDB.readFlightByName(data));
     })
 
     socketClient.on("disconnection", () => {
