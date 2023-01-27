@@ -22,6 +22,7 @@
 
   // Flights
   const orderFlightSelect = document.getElementById("orderFlightSelect");
+  const orderFlightDate = document.getElementById("orderFlightDate");
 
   /*
   productForm.onsubmit = (e) => {
@@ -57,6 +58,7 @@
     console.log("Connection to the server established ✅");
   });
 
+  // available flights
   socket.on("flight-history", (flights) => {
     fetch("/templates/flightLayout.hbs")
       .then((template) => template.text())
@@ -70,6 +72,10 @@
       })
   })
 
+  // available date of flights
+  
+
+  // add product
   socket.on("product", (data) => {
     fetch("/templates/productsLayout.hbs")
       .then((template) => template.text())
@@ -84,6 +90,7 @@
       });
   });
 
+  // read products
   socket.on("product-history", (products) => {
     fetch("/templates/productsLayout.hbs")
       .then((template) => template.text())
@@ -97,6 +104,7 @@
       });
   });
 
+  //add messages
   socket.on("message", (data) => {
     fetch("/templates/messageLayout.hbs")
       .then((template) => template.text())
@@ -112,6 +120,7 @@
       });
   });
 
+  // read messages
   socket.on("message-history", (messages) => {
     fetch("/templates/messageLayout.hbs")
       .then((template) => template.text())
