@@ -134,8 +134,14 @@
     <!--CARRITO-->
     <section class="text-white mb-4">
       <h2 class="text-2xl mb-4">My orders</h2>
-      <form action="/createorder" method="post" role="form" autocomplete="off">
-        <div class="flex rounded-lg bg-base-100 w-full p-4 gap-4">
+      <div class="flex rounded-lg bg-base-100">
+        <form
+          action="/createorder"
+          method="post"
+          role="form"
+          autocomplete="off"
+          class="w-full p-4 gap-4"
+        >
           <!--card bahamas-->
           {{! 
           <div class="flex justify-between w-full">
@@ -170,34 +176,35 @@
           }}
 
           <!--termina card bahamas-->
-          <div class="form-control w-full max-w-xs">
-            <label class="label">
-              <span class="label-text">Pick your flight</span>
-            </label>
-            <select class="select select-bordered" id="flightSelect">
-              <option disabled selected>Pick one</option>
-              <option>Star Wars</option>
-            </select>
-          </div>
-          <div class="form-control w-full max-w-xs">
-            <label class="label">
-              <span class="label-text">How many you'll need?</span>
-            </label>
-            <select class="select select-bordered">
-              <option disabled selected>Choose quantity</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
+          <div class="w-full flex gap-2">
+            <div class="w-1/2">
+              <label class="label" for="orderFlightSelect"><span
+                  class="label-text"
+                >Pick your flight</span></label>
+              <select class="select select-bordered w-full" id="orderFlightSelect">
+                <option disabled selected>Pick one</option>
+                <option>Star Wars</option>
+              </select>
+            </div>
+            <div class="w-1/2">
+              <label class="label" for="orderFlightQuantity">
+                <span class="label-text">How many you'll
+                  need?</span>
+              </label>
+              <select class="select select-bordered w-full" id="orderFlightQuantity">
+                <option disabled selected>Choose quantity</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
           </div>
           <div class="divider"></div>
-          <div class="flex w-full items-center justify-end">
-            <button class="btn btn-primary" type="submit">Proceed to checkout</button>
-          </div>
-        </div>
-      </form>
+          <button class="btn btn-primary" type="submit">Proceed to checkout</button>
+        </form>
+      </div>
     </section>
 
     <!--PRODUCTOS FORM / TABLE-->
