@@ -21,10 +21,13 @@ const socket = io();
 // Flights
 const orderFlightSelect = document.getElementById("orderFlightSelect");
 const orderFlightDate = document.getElementById("orderFlightDate");
+const orderFlightQuantity = document.getElementById("orderFlightQuantity");
 
-const orderFlightSelectChange = () => {
-  console.log('Cambiaste');
-} 
+orderFlightSelect.onchange = (e) => {
+  console.log(orderFlightSelect.value);
+  e.preventDefault();
+  socket.emit("orderselectchange", {name: orderFlightSelect.value})
+}
 
 /*
   productForm.onsubmit = (e) => {
@@ -74,10 +77,23 @@ socket.on("flight-history", (flights) => {
     });
 });
 
+socket.on("flight-history", (flights) => {
+  fetch("/templates/flightQuantityLayout.hbs")
+    .then((template) => template.text())
+    .then((text) => {
+      const template = Handlebars.compile(text);
+      flights.forEach((el) => {
+        const option = document.createElement("option");
+        option.innerHTML = template(el);
+        orderFlightQuantity.appendChild(option);
+      });
+    });
+});
+
 // available date of flights
-/*  socket.on("flight-history", (flights) => {
+socket.on("flight-history", (flights) => {
     console.log(flights.dates);
-    fetch("/templates/flightLayout.hbs")
+    fetch("/templates/flightDateLayout.hbs")
       .then((template) => template.text())
       .then((text) => {
         const template = Handlebars.compile(text);
@@ -87,7 +103,7 @@ socket.on("flight-history", (flights) => {
           orderFlightDate.appendChild(option)
         })
       })
-  }) */
+  }) 
 
 // add product
 socket.on("product", (data) => {
