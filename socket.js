@@ -1,5 +1,5 @@
 import { Server } from "socket.io";
-import { Products, Messages } from "./db/db.js";
+import { Products, Messages, Flights } from "./db/db.js";
 
 let io;
 
@@ -11,6 +11,7 @@ const initServer = (httpServer) => {
 const setEvents = (io) => {
   const ProductsDB = new Products();
   const MessagesDB = new Messages();
+  const FlightsDB = new Flights();
 
   io.on("connection", async (socketClient) => {
     console.log(
@@ -27,6 +28,10 @@ const setEvents = (io) => {
     //console.log(await MessagesDB.readMessages());
     if ((await MessagesDB.readMessages().length) !== 0) {
       //emit("message-history", await MessagesDB.readMessages());
+    }
+
+    if ((await FlightsDB.readFlights().length) !== 0) {
+      emit("flight-history", await FlightsDB.readFlights());
     }
 
     socketClient.on("disconnection", () => {

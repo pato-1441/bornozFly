@@ -37,6 +37,27 @@ class DB {
   }
 }
 
+class Flights extends DB {
+  constructor() {
+    super(
+      mongoose.model("flights", {
+        name: { type: String, required: true },
+        availability: { type: String, required: true },
+        price: { type: Number, required: true },
+        image: { type: String, required: true },
+      })
+    );
+  }
+
+  async addFlight(flight) {
+    await super.addData(flight);
+  }
+
+  async readFlights() {
+    return await super.getData();
+  }
+}
+
 class Messages extends DB {
   constructor() {
     super(
@@ -89,4 +110,4 @@ class Products extends DB {
   }
 }
 
-export { Products, Messages };
+export { Products, Messages, Flights };
