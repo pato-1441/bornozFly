@@ -133,31 +133,71 @@
 
     <!--CARRITO-->
     <section class="text-white mb-4">
-      <h2 class="text-2xl mb-4">My cart</h2>
-      <div class="rounded-lg bg-base-100 w-full p-4 grid grid-cols-1 gap-4">
-        <!--card bahamas-->
-        <div class="flex justify-between w-full">
-          <div class="flex gap-4 w-3/4">
-            <div class="w-1/3">
-              <img class="" src="https://image.cnbcfm.com/api/v1/image/106623579-1595250650940-gettyimages-1165357325-agirlswingingatcocoplumbeach_exuma_bahamas.jpeg?v=1595297199&w=720&h=405" alt="paquete bahamas">
+      <h2 class="text-2xl mb-4">My orders</h2>
+      <form action="/createorder" method="post" role="form" autocomplete="off">
+        <div class="flex rounded-lg bg-base-100 w-full p-4 gap-4">
+          <!--card bahamas-->
+          {{! 
+          <div class="flex justify-between w-full">
+            <div class="flex gap-4 w-3/4">
+              <div class="w-1/3">
+                <img
+                  class=""
+                  src="https://image.cnbcfm.com/api/v1/image/106623579-1595250650940-gettyimages-1165357325-agirlswingingatcocoplumbeach_exuma_bahamas.jpeg?v=1595297199&w=720&h=405"
+                  alt="paquete bahamas"
+                />
+              </div>
+              <div>
+                <p class="text-lg font-semibold">Paquete Bahamas 4 personas</p>
+                <p class="text-green-400 italic mb-4">Disponiblidad inmediata</p>
+                <p><a
+                    class="bg-base-300 px-2 py-1 rounded-lg"
+                    href="#"
+                    rel="noopener noreferrer"
+                  >Eliminar</a></p>
+              </div>
             </div>
-            <div>
-              <p class="text-lg font-semibold">Paquete Bahamas 4 personas</p>
-              <p class="text-green-400 italic mb-4">Disponiblidad inmediata</p>
-              <p><a class="bg-base-300 px-2 py-1 rounded-lg" href="#" rel="noopener noreferrer">Eliminar</a></p>
+            <div
+              class="flex flex-col text-center justify-center items-center w-1/4 gap-1"
+            >
+              <p class="text-gray-100">7%
+                <span class="line-through">$27.499</span></p>
+              <p
+                class="font-semibold text-lg px-2 py-1 rounded-lg bg-base-200"
+              >$25.499</p>
             </div>
           </div>
-          <div class="flex flex-col text-center justify-center items-center w-1/4 gap-1">
-            <p class="text-gray-100">7% <span class="line-through">$27.499</span></p>
-            <p class="font-semibold text-lg px-2 py-1 rounded-lg bg-base-200">$25.499</p>
+          }}
+
+          <!--termina card bahamas-->
+          <div class="form-control w-full max-w-xs">
+            <label class="label">
+              <span class="label-text">Pick your flight</span>
+            </label>
+            <select class="select select-bordered" id="flightSelect">
+              <option disabled selected>Pick one</option>
+              <option>Star Wars</option>
+            </select>
+          </div>
+          <div class="form-control w-full max-w-xs">
+            <label class="label">
+              <span class="label-text">How many you'll need?</span>
+            </label>
+            <select class="select select-bordered">
+              <option disabled selected>Choose quantity</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="divider"></div>
+          <div class="flex w-full items-center justify-end">
+            <button class="btn btn-primary" type="submit">Proceed to checkout</button>
           </div>
         </div>
-        <!--termina card bahamas-->
-        <div class="divider"></div>
-        <div class="flex w-full items-center justify-end mb-4">
-          <button class="btn btn-primary" type="submit" onclick="location.href = '/createorder'">Proceed to checkout</button>
-        </div>
-      </div>
+      </form>
     </section>
 
     <!--PRODUCTOS FORM / TABLE-->
