@@ -21,7 +21,7 @@ const socket = io();
 // Flights
 const orderFlightSelect = document.getElementById("orderFlightSelect");
 const orderFlightDate = document.getElementById("orderFlightDate");
-const orderFlightQuantity = document.getElementById("orderFlightQuantity");
+const orderFlightPrice = document.getElementById("orderFlightPrice");
 
 orderFlightSelect.onchange = (e) => {
   console.log(orderFlightSelect.value);
@@ -97,14 +97,14 @@ socket.on("flight-name", (flight) => {
 // available flights quantity
 socket.on("flight-name", (flight) => {
   console.log(flight[0].price);
-  fetch("/templates/flightQuantityLayout.hbs")
+  fetch("/templates/flightPriceLayout.hbs")
     .then((template) => template.text())
     .then((text) => {
-      orderFlightQuantity.innerHTML = "";
+      orderFlightPrice.innerHTML = "";
       const template = Handlebars.compile(text);
       const option = document.createElement("option");
       option.innerHTML =`$${flight[0].price}`;
-      orderFlightQuantity.appendChild(option);
+      orderFlightPrice.appendChild(option);
     });
 });
 
