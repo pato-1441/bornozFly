@@ -20,6 +20,9 @@
   const messageOutput = document.getElementById("messageOutput");
   const socket = io();
 
+  // Flights
+  const orderFlightSelect = document.getElementById("orderFlightSelect");
+
   /*
   productForm.onsubmit = (e) => {
     e.preventDefault();
@@ -53,6 +56,19 @@
   socket.on("connect", () => {
     console.log("Connection to the server established ✅");
   });
+
+  socket.on("flight-history", (flights) => {
+    fetch("/templates/flightLayout.hbs")
+      .then((template) => template.text())
+      .then((text) => {
+        const template = Handlebars.compile(text);
+        flights.forEach((el) => {
+          const option = document.createElement("option");
+          option.innerHTML = template(el);
+          orderFlightSelect.appendChild(option)
+        })
+      })
+  })
 
   socket.on("product", (data) => {
     fetch("/templates/productsLayout.hbs")
