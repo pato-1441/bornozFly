@@ -19,6 +19,7 @@ const messageOutput = document.getElementById("messageOutput");
 const socket = io();
 
 // Flights
+const createOrderForm = document.getElementById("createOrderForm");
 const orderFlightSelect = document.getElementById("orderFlightSelect");
 const orderFlightDate = document.getElementById("orderFlightDate");
 const orderFlightPrice = document.getElementById("orderFlightPrice");
@@ -27,6 +28,15 @@ orderFlightSelect.onchange = (e) => {
   console.log(orderFlightSelect.value);
   e.preventDefault();
   socket.emit("orderselectchange", orderFlightSelect.value);
+};
+
+createOrderForm.onsubmit = (e) => {
+  e.preventDefault();
+  socket.emit("neworder", {
+    name: orderFlightSelect.value,
+    date: orderFlightDate.value,
+    price: orderFlightPrice.value,
+  });
 };
 
 /*
@@ -103,7 +113,7 @@ socket.on("flight-name", (flight) => {
       orderFlightPrice.innerHTML = "";
       const template = Handlebars.compile(text);
       const option = document.createElement("option");
-      option.innerHTML =`$${flight[0].price}`;
+      option.innerHTML = `$${flight[0].price}`;
       orderFlightPrice.appendChild(option);
     });
 });

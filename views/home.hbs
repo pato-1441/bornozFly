@@ -141,6 +141,7 @@
           role="form"
           autocomplete="off"
           class="w-full p-4 gap-4"
+          id="createOrderForm"
         >
           <!--card bahamas-->
           {{! 
@@ -185,6 +186,7 @@
                 class="select select-bordered border-gray-600 w-full"
                 id="orderFlightSelect"
                 onchange="orderFlightSelectChange()"
+                name="orderFlightSelect"
               >
                 <option disabled selected>Pick one</option>
               </select>
@@ -196,6 +198,7 @@
               <select
                 class="select select-bordered border-gray-600 w-full"
                 id="orderFlightDate"
+                name="orderFlightDate"
               >
                 <option disabled selected>When you'll fly?</option>
               </select>
@@ -207,6 +210,7 @@
               <div
                 class="flex w-full border border-gray-600 rounded-lg items-center h-12 pl-4 text-sm font-semibold"
                 id="orderFlightPrice"
+                name="orderFlightPrice"
               >
                 <p>Select a flight</p>
               </div>

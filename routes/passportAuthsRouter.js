@@ -68,7 +68,7 @@ passportAuthsRouter.post(
   }
 );
 
-passportAuthsRouter.post("/createorder", Authenticated, (req, res) => {
+passportAuthsRouter.post("/createorder", (req, res) => {
   twilioService.sendWhatsapp(req.body);
   res.redirect("/");
 });

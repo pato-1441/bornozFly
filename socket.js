@@ -56,6 +56,10 @@ const setEvents = (io) => {
       await MessagesDB.addMessage(data);
       emit("message", await MessagesDB.readMessages());
     });
+
+    socketClient.on("neworder", async (data) => {
+      data.id = socketClient.id;
+    })
   });
 };
 
