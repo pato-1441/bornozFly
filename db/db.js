@@ -42,7 +42,7 @@ class Orders extends DB {
     super(
       mongoose.model("orders", {
         user: { type: String, required: true },
-        products: { type: String, required: true },
+        products: { type: Object, required: true },
         date: {
           day: { type: String, required: true },
           hours: { type: String, required: true },

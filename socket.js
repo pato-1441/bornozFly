@@ -1,5 +1,6 @@
 import { Server } from "socket.io";
-import { Products, Messages, Flights } from "./db/db.js";
+import { Products, Messages, Flights, Orders } from "./db/db.js";
+import { twilioService } from "./helpers/twilioConfig.js";
 
 let io;
 
@@ -12,6 +13,7 @@ const setEvents = (io) => {
   const ProductsDB = new Products();
   const MessagesDB = new Messages();
   const FlightsDB = new Flights();
+  const OrdersDB = new Orders()
 
   io.on("connection", async (socketClient) => {
     console.log(
@@ -58,7 +60,9 @@ const setEvents = (io) => {
     });
 
     socketClient.on("neworder", async (data) => {
-      data.id = socketClient.id;
+      data.user = socketClient.id;
+      twilioService.sendWhatsapp(data);
+      await OrdersDB.addOrder(data);
     })
   });
 };

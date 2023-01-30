@@ -26,7 +26,7 @@ const sendWhatsapp = async (req) => {
       body: `
             Nuevo pedido de:
             
-            *${req.order.products}*
+            *${req.order}*
 
             Realizado por:
             _${req.user.firstname} - ${req.user.username}_
