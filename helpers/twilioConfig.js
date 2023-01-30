@@ -23,7 +23,7 @@ const sendWhatsapp = async (data) => {
   try {
     const message = await client.messages.create({
       body: `*Nuevo pedido de:*            
-${data.body.orderFlightSelect}
+${data.body.orderFlightSelect} - ${data.body.orderFlightPrice}
 
 *Fecha:*
 ${data.body.orderFlightDate}
