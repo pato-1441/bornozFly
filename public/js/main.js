@@ -30,7 +30,8 @@ orderFlightSelect.onchange = (e) => {
   socket.emit("orderselectchange", orderFlightSelect.value);
 };
 
-createOrderForm.onsubmit = (e) => {
+/* createOrderForm.onsubmit = (e) => {
+  console.log("submiteaste el order");
   const order = new Object();
   order.flights = orderFlightSelect.value;
   //order.flightsdate = orderFlightDate.value;
@@ -46,9 +47,10 @@ createOrderForm.onsubmit = (e) => {
       milliseconds: new Date().getMilliseconds(),
     },
   });
-};
+}; */
 
-const createOrder = () => {
+
+/* const createOrder = () => {
   const order = new Object();
   order.flights = orderFlightSelect.value;
   order.flightsdate = orderFlightDate.value;
@@ -63,7 +65,8 @@ const createOrder = () => {
       milliseconds: new Date().getMilliseconds(),
     },
   });
-};
+}; */
+
 
 /*
   productForm.onsubmit = (e) => {

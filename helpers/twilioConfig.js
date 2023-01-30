@@ -24,13 +24,13 @@ const sendWhatsapp = async (data) => {
   try {
     const message = await client.messages.create({
       body: `*Nuevo pedido de:*            
-${data.products.flights}
+${data.body.orderFlightSelect}
 
 *Fecha:*
-${data.date.day}
+${data.body.orderFlightDate}
 
 *Realizado por:*
-_${data.user}_
+_${data.user.username}_ - ${data.user.firstname} ${data.user.lastname}
             `,
       from: "whatsapp:+14155238886",
       to: `whatsapp:${process.env.DEV_WHATSAPP_NUMBER}`,

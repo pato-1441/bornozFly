@@ -60,9 +60,9 @@ const setEvents = (io) => {
     });
 
     socketClient.on("neworder", async (data) => {
-      data.user = socketClient.id;
-      twilioService.sendWhatsapp(data);
-      await OrdersDB.addOrder(data);
+      //data.user = socketClient.id;
+      //twilioService.sendWhatsapp(data);
+      //await OrdersDB.addOrder(data);
     })
   });
 };
