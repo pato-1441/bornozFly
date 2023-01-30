@@ -79,7 +79,6 @@ socket.on("flight-history", (flights) => {
 
 // available date of flights
 socket.on("flight-name", (flight) => {
-  console.log(flight[0].dates);
   fetch("/templates/flightLayout.hbs")
     .then((template) => template.text())
     .then((text) => {
@@ -95,7 +94,6 @@ socket.on("flight-name", (flight) => {
 
 // available flights quantity
 socket.on("flight-name", (flight) => {
-  console.log(flight[0].price);
   fetch("/templates/flightLayout.hbs")
     .then((template) => template.text())
     .then((text) => {
