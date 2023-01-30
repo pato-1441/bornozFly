@@ -37,6 +37,35 @@ class DB {
   }
 }
 
+class Orders extends DB {
+  constructor() {
+    super(
+      mongoose.model("orders", {
+        user: { type: String, required: true },
+        products: { type: String, required: true },
+        date: {
+          day: { type: String, required: true },
+          hours: { type: String, required: true },
+          minutes: { type: String, required: true },
+          milliseconds: { type: String, required: true },
+        },
+      })
+    );
+  }
+
+  async addFlight(flight) {
+    await super.addData(flight);
+  }
+
+  async readFlights() {
+    return await super.getData();
+  }
+
+  async readFlightByName(name) {
+    return await this.schema.find({ name: name });
+  }
+}
+
 class Flights extends DB {
   constructor() {
     super(
@@ -114,4 +143,4 @@ class Products extends DB {
   }
 }
 
-export { Products, Messages, Flights };
+export { Products, Messages, Flights, Orders };
