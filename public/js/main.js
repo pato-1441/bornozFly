@@ -31,11 +31,19 @@ orderFlightSelect.onchange = (e) => {
 };
 
 createOrderForm.onsubmit = (e) => {
+  const order = new Object();
+  order.flights = orderFlightSelect.value;
+  order.flightsdate = orderFlightDate.value;
+  order.flightsprice = orderFlightPrice.value;
   e.preventDefault();
   socket.emit("neworder", {
-    name: orderFlightSelect.value,
-    date: orderFlightDate.value,
-    price: orderFlightPrice.value,
+    products: order,
+    date: {
+      day: new Date().toLocaleDateString(),
+      hours: new Date().getHours(),
+      minutes: new Date().getMinutes(),
+      milliseconds: new Date().getMilliseconds(),
+    },
   });
 };
 

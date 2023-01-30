@@ -53,15 +53,15 @@ class Orders extends DB {
     );
   }
 
-  async addFlight(flight) {
-    await super.addData(flight);
+  async addOrder(order) {
+    await super.addData(order);
   }
 
-  async readFlights() {
+  async readOrders() {
     return await super.getData();
   }
 
-  async readFlightByName(name) {
+  async readOrderByName(name) {
     return await this.schema.find({ name: name });
   }
 }
