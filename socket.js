@@ -1,6 +1,10 @@
 import { Server } from "socket.io";
 import { Products, Messages, Flights, Orders } from "./db/db.js";
-import { twilioService } from "./helpers/twilioConfig.js";
+
+const ProductsDB = new Products();
+const MessagesDB = new Messages();
+const FlightsDB = new Flights();
+const OrdersDB = new Orders();
 
 let io;
 
@@ -10,10 +14,7 @@ const initServer = (httpServer) => {
 };
 
 const setEvents = (io) => {
-  const ProductsDB = new Products();
-  const MessagesDB = new Messages();
-  const FlightsDB = new Flights();
-  const OrdersDB = new Orders()
+  
 
   io.on("connection", async (socketClient) => {
     console.log(
@@ -38,7 +39,7 @@ const setEvents = (io) => {
 
     socketClient.on("orderselectchange", async (data) => {
       emit("flight-name", await FlightsDB.readFlightByName(data));
-    })
+    });
 
     socketClient.on("disconnection", () => {
       console.log(
@@ -57,18 +58,29 @@ const setEvents = (io) => {
       data.id = socketClient.id;
       await MessagesDB.addMessage(data);
       emit("message", await MessagesDB.readMessages());
-    });
-
-    socketClient.on("neworder", async (data) => {
-      //data.user = socketClient.id;
-      //twilioService.sendWhatsapp(data);
-      //await OrdersDB.addOrder(data);
-    })
+    });    
   });
+};
+
+const sendOrder = async (orderData) => {
+  console.log("socket.js - linea 64", orderData);
+  const data = new Object();
+  data.user = orderData.user.username;
+  data.products = {
+    flights: orderData.body.orderFlightSelect,
+    flightsdate: orderData.body.orderFlightDate,
+  };
+  data.date = {
+    day: new Date().toLocaleDateString(),
+    hours: new Date().getHours(),
+    minutes: new Date().getMinutes(),
+    milliseconds: new Date().getMilliseconds(),
+  };
+  await OrdersDB.addOrder(data);
 };
 
 const emit = (action, data) => {
   io.emit(action, data);
 };
 
-export { initServer, emit };
+export { initServer, emit, sendOrder };

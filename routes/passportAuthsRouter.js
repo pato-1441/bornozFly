@@ -2,6 +2,7 @@ import { Router } from "express";
 import passport from "passport";
 import { twilioService } from "../helpers/twilioConfig.js";
 import Authenticated from "../middlewares/authenticate.js";
+import { sendOrder } from "../socket.js";
 
 const passportAuthsRouter = Router();
 
@@ -71,7 +72,7 @@ passportAuthsRouter.post(
 passportAuthsRouter.post("/createorder", (req, res) => {
   const {body, user} = req;
   const orderData = {body, user};
-  console.log(orderData);
+  sendOrder(orderData);
   twilioService.sendWhatsapp(orderData);
   res.redirect("/");
 });

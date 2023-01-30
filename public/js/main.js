@@ -19,7 +19,6 @@ const messageOutput = document.getElementById("messageOutput");
 const socket = io();
 
 // Flights
-const createOrderForm = document.getElementById("createOrderForm");
 const orderFlightSelect = document.getElementById("orderFlightSelect");
 const orderFlightDate = document.getElementById("orderFlightDate");
 const orderFlightPrice = document.getElementById("orderFlightPrice");
@@ -29,44 +28,6 @@ orderFlightSelect.onchange = (e) => {
   e.preventDefault();
   socket.emit("orderselectchange", orderFlightSelect.value);
 };
-
-/* createOrderForm.onsubmit = (e) => {
-  console.log("submiteaste el order");
-  const order = new Object();
-  order.flights = orderFlightSelect.value;
-  //order.flightsdate = orderFlightDate.value;
-  order.flightsdate = new Date().toLocaleDateString();
-  order.flightsprice = orderFlightPrice.value;
-  e.preventDefault();
-  socket.emit("neworder", {
-    products: order,
-    date: {
-      day: new Date().toLocaleDateString(),
-      hours: new Date().getHours(),
-      minutes: new Date().getMinutes(),
-      milliseconds: new Date().getMilliseconds(),
-    },
-  });
-}; */
-
-
-/* const createOrder = () => {
-  const order = new Object();
-  order.flights = orderFlightSelect.value;
-  order.flightsdate = orderFlightDate.value;
-  order.flightsprice = orderFlightPrice.value;
-  e.preventDefault();
-  socket.emit("neworder", {
-    products: order,
-    date: {
-      day: new Date().toLocaleDateString(),
-      hours: new Date().getHours(),
-      minutes: new Date().getMinutes(),
-      milliseconds: new Date().getMilliseconds(),
-    },
-  });
-}; */
-
 
 /*
   productForm.onsubmit = (e) => {

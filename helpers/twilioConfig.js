@@ -20,7 +20,6 @@ const sendSMS = async () => {
 };
 
 const sendWhatsapp = async (data) => {
-  console.log(data);
   try {
     const message = await client.messages.create({
       body: `*Nuevo pedido de:*            
