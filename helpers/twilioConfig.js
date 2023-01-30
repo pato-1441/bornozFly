@@ -29,7 +29,7 @@ ${data.body.orderFlightSelect} - ${data.body.orderFlightPrice}
 ${data.body.orderFlightDate}
 
 *Realizado por:*
-_${data.user.username}_ - ${data.user.firstname} ${data.user.lastname}
+${data.user.username}_ - ${data.user.firstname} ${data.user.lastname}
             `,
       from: "whatsapp:+14155238886",
       to: `whatsapp:${process.env.DEV_WHATSAPP_NUMBER}`,
