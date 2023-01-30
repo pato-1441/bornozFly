@@ -69,6 +69,7 @@ const sendOrder = async (orderData) => {
   data.products = {
     flights: orderData.body.orderFlightSelect,
     flightsdate: orderData.body.orderFlightDate,
+    flightsprice: orderData.body.orderFlightPrice,
   };
   data.date = {
     day: new Date().toLocaleDateString(),
