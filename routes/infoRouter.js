@@ -1,6 +1,5 @@
 import { Router } from "express";
 import compression from "compression";
-import logger from "../helpers/logger.js";
 
 const infoRouter = Router();
 
