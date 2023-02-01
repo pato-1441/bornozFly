@@ -1,8 +1,7 @@
 import { Router } from "express";
 import passport from "passport";
 import Authenticated from "../middlewares/authenticate.js";
-import { twilioService } from "../helpers/twilioConfig.js";
-import { sendOrder } from "../socket.js";
+import passportAuthsController from "../controllers/passportAuthsController.js";
 
 const passportAuthsRouter = Router();
 
@@ -10,71 +9,53 @@ const passportAuthsRouter = Router();
 
 // login
 
-passportAuthsRouter.get("/login", Authenticated, (req, res) => {
-  res.render("login");
-});
+passportAuthsRouter.get(
+  "/login",
+  Authenticated,
+  passportAuthsController.getLogin
+);
 
-passportAuthsRouter.get("/", Authenticated, (req, res) => {
-  res.redirect("login");
-});
+passportAuthsRouter.get(
+  "/",
+  Authenticated,
+  passportAuthsController.redirectLogin
+);
 
-passportAuthsRouter.get("/login-error", (req, res) => {
-  res.render("login-error", {});
-});
+passportAuthsRouter.get("/login-error", passportAuthsController.getLoginError);
 
-passportAuthsRouter.get("/logout", (req, res) => {
-  const { firstname } = req.user;
-  req.logout((err) => {
-    if (err) {
-      return err;
-    }
-    res.render("logout", { firstname });
-  });
-  /* req.logout();
-  res.render("logout", { username }); */
-});
+passportAuthsRouter.get("/logout", passportAuthsController.getLogout);
 
 // signup
 
-passportAuthsRouter.get("/signup", (req, res) => {
-  res.render("signup");
-});
+passportAuthsRouter.get("/signup", passportAuthsController.getSignup);
 
-passportAuthsRouter.get("/signup-error", (req, res) => {
-  res.render("signup-error", {});
-});
+passportAuthsRouter.get(
+  "/signup-error",
+  passportAuthsController.getSignupError
+);
 
 // profile
 
-passportAuthsRouter.get("/profile/", Authenticated, (req, res) => {
-  const { username } = req.user;
-  res.render("profile", { username });
-});
+passportAuthsRouter.get(
+  "/profile/",
+  Authenticated,
+  passportAuthsController.getProfile
+);
 
 // post
 
 passportAuthsRouter.post(
   "/login",
   passport.authenticate("login", { failureRedirect: "/login-error" }),
-  (req, res) => {
-    res.redirect("/");
-  }
+  passportAuthsController.postLogin
 );
 
 passportAuthsRouter.post(
   "/signup",
   passport.authenticate("signup", { failureRedirect: "/signup-error" }),
-  (req, res) => {
-    res.redirect("/");
-  }
+  passportAuthsController.postSignup
 );
 
-passportAuthsRouter.post("/createorder", (req, res) => {
-  const {body, user} = req;
-  const orderData = {body, user};
-  sendOrder(orderData);
-  twilioService.sendWhatsapp(orderData);
-  res.redirect("/");
-});
+passportAuthsRouter.post("/createorder");
 
 export default passportAuthsRouter;
