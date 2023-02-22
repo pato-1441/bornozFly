@@ -19,6 +19,10 @@ import http from "http";
 import bodyParser from "body-parser";
 import logger from "./helpers/logger.js";
 
+import { ApolloServer } from "apollo-server-express";
+import typeDefs from "./helpers/typeDefs.js";
+import resolvers from "./helpers/resolvers.js";
+
 const args = minimist(process.argv.slice(2), {
   alias: {
     p: "PORT",
@@ -91,6 +95,16 @@ if (MODE === "cluster" && cluster.isPrimary) {
   // listen for requests :)
   const server = http.createServer(app);
   initServer(server);
+
+  // apollo server
+  const apolloServer = new ApolloServer({
+    typeDefs,
+    resolvers,
+  });
+
+  await apolloServer.start();
+
+  apolloServer.applyMiddleware({ app: app });
 
   server.listen(PORT, async () => {
     logger.info(
