@@ -14,7 +14,7 @@ const typeDefs = gql`
 
   type Product {
     name: String
-    price: Boolean
+    price: Float
     url: String
   }
   #type Product {

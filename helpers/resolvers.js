@@ -1,4 +1,4 @@
-import { User, Product } from "../models/index.js";
+import { User, Product, Flight, Message, Order } from "../models/index.js";
 
 const resolvers = {
   Query: {
