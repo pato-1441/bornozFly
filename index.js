@@ -105,6 +105,7 @@ if (MODE === "cluster" && cluster.isPrimary) {
   await apolloServer.start();
 
   apolloServer.applyMiddleware({ app: app });
+  app.use("*", (req, res) => res.status(404).send("URL Resource not found"));
 
   server.listen(PORT, async () => {
     logger.info(
