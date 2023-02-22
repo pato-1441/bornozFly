@@ -17,9 +17,9 @@ const typeDefs = gql`
     getAllUsers: [User]
   }
 
-  #type Mutation {
-
-  #}
+  # type Mutation {
+  #  createUser
+  # }
 `;
 
 export default typeDefs;
