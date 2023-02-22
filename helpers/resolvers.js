@@ -1,4 +1,4 @@
-import { User } from "../models/user.js";
+import { User, Product } from "../models/index.js";
 
 const resolvers = {
   Query: {
@@ -6,6 +6,10 @@ const resolvers = {
     getAllUsers: async () => {
       const users = await User.find();
       return users;
+    },
+    getAllProducts: async () => {
+      const products = await Product.find();
+      return products;
     },
   },
 };
