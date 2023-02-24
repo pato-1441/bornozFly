@@ -18,13 +18,13 @@ const typeDefs = gql`
     url: String!
   }
 
-  type Author {        
+  type Author {
     id: String
     name: String!
     surname: String
     age: Float
     alias: String
-    avatar: String    
+    avatar: String
   }
 
   type Date {
@@ -57,6 +57,9 @@ const typeDefs = gql`
     hello: String
     getAllUsers: [User]
     getAllProducts: [Product]
+    getAllMessages: [Message]
+    getAllFlights: [Flight]
+    getAllOrders: [Order]
   }
 
   # type Mutation {
