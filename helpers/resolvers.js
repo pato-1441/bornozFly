@@ -11,6 +11,18 @@ const resolvers = {
       const products = await Product.find();
       return products;
     },
+    getAllMessages: async () => {
+      const messages = await Message.find();
+      return messages;
+    },
+    getAllFlights: async () => {
+      const flights = await Flight.find();
+      return flights;
+    },
+    getAllOrders: async () => {
+      const orders = await Order.find();
+      return orders;
+    },
   },
 };
 
