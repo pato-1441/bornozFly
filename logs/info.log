@@ -283,3 +283,12 @@
 {"level":30,"time":1677101313168,"pid":7412,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
 {"level":30,"time":1677276456860,"pid":6048,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
 {"level":30,"time":1677276456860,"pid":6048,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678823639414,"pid":12824,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678823639414,"pid":12824,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678823675911,"pid":1516,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678823675911,"pid":1516,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678823858707,"pid":1516,"hostname":"DESKTOP-OS2JT62","accepted":["albornozpatricio2004@gmail.com"],"rejected":[],"ehlo":["SIZE 35882577","8BITMIME","AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH","ENHANCEDSTATUSCODES","PIPELINING","CHUNKING","SMTPUTF8"],"envelopeTime":596,"messageTime":643,"messageSize":28408,"response":"250 2.0.0 OK  1678823859 b25-20020a4ad899000000b0051763d6497fsm1362319oov.38 - gsmtp","envelope":{"from":"","to":["albornozpatricio2004@gmail.com"]},"messageId":"<e5c1d758-1146-f609-5039-c1fa88663f55@localhost>"}
+{"level":30,"time":1678824395060,"pid":12320,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678824395060,"pid":12320,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678824425299,"pid":15320,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678824425299,"pid":15320,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}

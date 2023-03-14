@@ -56,6 +56,9 @@ passportAuthsRouter.post(
   passportAuthsController.postSignup
 );
 
-passportAuthsRouter.post("/createorder");
+passportAuthsRouter.post(
+  "/createorder",
+  passportAuthsController.postCreateOrder
+);
 
 export default passportAuthsRouter;

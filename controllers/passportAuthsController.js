@@ -64,4 +64,5 @@ export default {
   getSignupError,
   postLogin,
   postSignup,
+  postCreateOrder
 };
