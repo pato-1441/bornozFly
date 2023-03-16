@@ -69,7 +69,10 @@ if (MODE === "cluster" && cluster.isPrimary) {
   );
   app.engine(
     "hbs",
-    handlebars.engine({ extname: ".hbs", defaultLayout: "main.hbs" })
+    handlebars.engine({
+      extname: ".hbs",
+      defaultLayout: "main.hbs",
+    })
   );
   app.set("view engine", "hbs");
   app.set("views", "./views");

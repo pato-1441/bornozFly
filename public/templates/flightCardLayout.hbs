@@ -6,9 +6,11 @@
     <div>
       <p class="text-lg font-semibold">{{name}}</p>
       <p class="italic mb-4">Available:
-        {{#if availability }}
-          <span class="">✅</span>        
-        {{/if}}        
+        {{#if availability}}
+          <span class="">✅</span>
+        {{else}}
+          <span class="">❌</span>
+        {{/if}}
       </p>
     </div>
   </div>

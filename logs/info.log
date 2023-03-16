@@ -68,3 +68,22 @@
 {"level":30,"time":1678981467865,"pid":13436,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
 {"level":30,"time":1678982461531,"pid":16940,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
 {"level":30,"time":1678982461531,"pid":16940,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678982734475,"pid":14740,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678982734475,"pid":14740,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678983260957,"pid":12876,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678983260957,"pid":12876,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678983316813,"pid":4876,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678983316813,"pid":4876,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678983780944,"pid":12108,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678983780945,"pid":12108,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678983854812,"pid":15440,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678983854812,"pid":15440,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678984000549,"pid":7716,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678984000549,"pid":7716,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678984030111,"pid":6416,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678984030112,"pid":6416,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678984061067,"pid":2032,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678984061067,"pid":2032,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678984063822,"pid":2032,"hostname":"DESKTOP-OS2JT62","err":{"type":"RangeError","message":"Invalid status code: { helpers: [Object] }","stack":"RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: { helpers: [Object] }\n    at new NodeError (node:internal/errors:387:5)\n    at ServerResponse.writeHead (node:_http_server:297:11)\n    at ServerResponse.writeHead (E:\\Coderhouse\\COMISION32140-Backend\\bornoz-fly\\node_modules\\on-headers\\index.js:44:26)\n    at ServerResponse._implicitHeader (node:_http_server:288:8)\n    at write_ (node:_http_outgoing:826:9)\n    at ServerResponse.end (node:_http_outgoing:934:5)\n    at ServerResponse.end (E:\\Coderhouse\\COMISION32140-Backend\\bornoz-fly\\node_modules\\express-session\\index.js:359:19)\n    at ServerResponse.redirect (E:\\Coderhouse\\COMISION32140-Backend\\bornoz-fly\\node_modules\\express\\lib\\response.js:978:10)\n    at redirectLogin (file:///E:/Coderhouse/COMISION32140-Backend/bornoz-fly/controllers/passportAuthsController.js:19:7)\n    at Layer.handle [as handle_request] (E:\\Coderhouse\\COMISION32140-Backend\\bornoz-fly\\node_modules\\express\\lib\\router\\layer.js:95:5)","code":"ERR_HTTP_INVALID_STATUS_CODE"},"msg":"Invalid status code: { helpers: [Object] }"}
+{"level":30,"time":1678984114887,"pid":14768,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678984114888,"pid":14768,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
