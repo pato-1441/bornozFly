@@ -13,8 +13,8 @@ const getAllFlights = async (req, res) => {
 const addFlight = async (req, res) => {
   const { flight } = req.body;
   try {
-    flightAdded = await Flight.insertMany(flight);
-    res.send({ operationStatus: "successful", flightAdded: flightAdded });
+    const flightAdded = await Flight.insertMany(flight);
+    await res.send({ operationStatus: "successful", flightAdded: flightAdded });
   } catch (error) {
     logger.error(error);
     res.send(error);
