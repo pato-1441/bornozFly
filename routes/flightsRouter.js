@@ -7,4 +7,6 @@ flightsRouter.get("/", flightsController.getAllFlights);
 
 flightsRouter.post("/", flightsController.addFlight);
 
+flightsRouter.put("/edit/:flightId", flightsController.editFlightById);
+
 export default flightsRouter;

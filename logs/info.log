@@ -32,3 +32,9 @@
 {"level":50,"time":1678977081311,"pid":4972,"hostname":"DESKTOP-OS2JT62","err":{"type":"ReferenceError","message":"flightAdded is not defined","stack":"ReferenceError: flightAdded is not defined\n    at addFlight (file:///E:/Coderhouse/COMISION32140-Backend/bornoz-fly/controllers/flightsController.js:16:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"},"msg":"flightAdded is not defined"}
 {"level":30,"time":1678977129830,"pid":16992,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
 {"level":30,"time":1678977129831,"pid":16992,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678978549223,"pid":3828,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678978549223,"pid":3828,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678978679453,"pid":5772,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678978679453,"pid":5772,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
+{"level":30,"time":1678978723227,"pid":11724,"hostname":"DESKTOP-OS2JT62","msg":"Your app is listening on http://localhost:8080/"}
+{"level":30,"time":1678978723227,"pid":11724,"hostname":"DESKTOP-OS2JT62","msg":"Environment: local"}
