@@ -9,6 +9,7 @@ import {
   infoRouter,
   passportAuthsRouter,
   productsTestRouter,
+  flightsRouter,
 } from "./routes/index.js";
 import { passportInit } from "./passport/init.js";
 import minimist from "minimist";
@@ -83,6 +84,7 @@ if (MODE === "cluster" && cluster.isPrimary) {
   app.use("/", passportAuthsRouter);
   app.use("/api", productsTestRouter);
   app.use("/info", infoRouter);
+  app.use("/flights", flightsRouter);
   app.use((error, req, res, next) => {
     if (error.statusCode) {
       return res.status(error.statusCode).send(`Error ${error.statusCode}`);
