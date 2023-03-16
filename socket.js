@@ -23,12 +23,6 @@ const setEvents = (io) => {
       " has connected."
     );
 
-    //console.log(await ProductsDB.readProducts());
-    if ((await ProductsDB.readProducts().length) !== 0) {
-      //emit("product-history", await ProductsDB.readProducts());
-    }
-
-    //console.log(await MessagesDB.readMessages());
     if ((await MessagesDB.readMessages().length) !== 0) {
       //emit("message-history", await MessagesDB.readMessages());
     }
