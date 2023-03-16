@@ -12,8 +12,7 @@ const productForm = document.getElementById("enviarProducto");
 const tableBody = document.getElementById("products");
 
 // Messages
-const messageForm = document.getElementById("enviarMensaje");
-const usernameAlias = document.getElementById("usernameAlias");
+const messageForm = document.getElementById("sendMessage");
 const messageInput = document.getElementById("messageInput");
 const messageOutput = document.getElementById("messageOutput");
 const socket = io();
@@ -24,6 +23,23 @@ const orderFlightDate = document.getElementById("orderFlightDate");
 const orderFlightPrice = document.getElementById("orderFlightPrice");
 
 const flightCardsContainer = document.getElementById("flightCardsContainer");
+
+messageForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  socket.emit("message", {
+    author: {
+      name: socket.id,
+    },
+    text: messageInput.value,
+    date: {
+      day: new Date().toLocaleDateString(),
+      hours: new Date().getHours(),
+      minutes: new Date().getMinutes(),
+      milliseconds: new Date().getMilliseconds(),
+    },
+  });
+  messageInput.value = "";
+});
 
 orderFlightSelect.onchange = (e) => {
   console.log(orderFlightSelect.value);
