@@ -1,4 +1,7 @@
-<div class="flex flex-col max-w-xl px-4 py-2 text-gray-700 rounded shadow-lg bg-white">
-  <p class="block"><span class="font-semibold">You</span>: {{text}}</p>
+<div class="flex flex-col max-w-xl px-4 py-2 text-gray-700 items-end rounded shadow-lg bg-white">
+  <p class="block">
+    <p class="font-semibold">{{author.name}}</p>
+    <p class="text-right">{{text}}</p>     
+  </p>
   <p class="text-gray-400">{{date.day}} {{date.hours}}:{{date.minutes}}</p>
 </div>

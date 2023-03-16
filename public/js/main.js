@@ -55,6 +55,7 @@ socket.on("message", (data) => {
 
 // read messages
 socket.on("message-history", (messages) => {
+  messageOutput.innerHTML = "";
   fetch("/templates/messageLayout.hbs")
     .then((template) => template.text())
     .then((text) => {
