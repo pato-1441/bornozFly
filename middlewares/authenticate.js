@@ -11,4 +11,10 @@ const Authenticated = (req, res, next) => {
     });
   next();
 };
-export default Authenticated;
+
+const orderAuthenticate = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+};
+export { Authenticated, orderAuthenticate };

@@ -1,4 +1,3 @@
-import { Authenticated } from "./authenticate.js";
-import { PassportAuth } from "./authPassport.js";
+import { Authenticated, orderAuthenticate } from "./authenticate.js";
 
-export { Authenticated, PassportAuth };
+export { Authenticated, orderAuthenticate };

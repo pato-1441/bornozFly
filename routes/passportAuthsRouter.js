@@ -1,6 +1,6 @@
 import { Router } from "express";
 import passport from "passport";
-import Authenticated from "../middlewares/authenticate.js";
+import { Authenticated, orderAuthenticate } from "../middlewares/index.js";
 import passportAuthsController from "../controllers/passportAuthsController.js";
 
 const passportAuthsRouter = Router();
@@ -58,6 +58,7 @@ passportAuthsRouter.post(
 
 passportAuthsRouter.post(
   "/createorder",
+  orderAuthenticate,
   passportAuthsController.postCreateOrder
 );
 
