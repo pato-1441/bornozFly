@@ -5,6 +5,7 @@ const flightSchema = mongoose.Schema({
   availability: { type: String, required: true },
   price: { type: Number, required: true },
   image: { type: String, required: true },
+  dates: { type: Array, required: true },
 });
 
 export const Flight = mongoose.model("Flight", flightSchema);

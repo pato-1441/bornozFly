@@ -5,4 +5,6 @@ const flightsRouter = Router();
 
 flightsRouter.get("/", flightsController.getAllFlights);
 
+flightsRouter.post("/", flightsController.addFlight);
+
 export default flightsRouter;
