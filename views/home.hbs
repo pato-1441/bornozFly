@@ -220,14 +220,13 @@
       </button>
     </div>
     <div id="supportChat" class="hidden">
-      <div class="m-4 toast toast-start bg-base-300 rounded-lg shadow-lg w-1/4">
+      <div
+        class="m-4 toast toast-start bg-base-300 rounded-lg shadow-lg w-1/2 sm:w-1/4"
+      >
         <div class="text-white flex flex-col px-2">
           <div class="flex justify-between items-center mb-4">
             <h2 class="text-2xl">Support chat</h2>
-            <button
-              class=""
-              id="buttonCloseChat"
-            >
+            <button class="" id="buttonCloseChat">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -258,11 +257,11 @@
             <form
               action="#"
               autocomplete="off"
-              class="flex flex-col sm:flex-row items-center justify-between text-black bg-white rounded-bl-lg rounded-br-lg"
+              class="flex flex-row items-center justify-between text-black bg-white rounded-bl-lg rounded-br-lg"
               id="sendMessage"
             >
               <input
-                class="text-black bg-white input w-full"
+                class="text-black bg-white input w-3/4 sm:w-full"
                 required
                 type="text"
                 placeholder="Start typing..."
@@ -270,7 +269,7 @@
                 id="messageInput"
               />
               <button
-                class="w-12 flex justify-center items-center"
+                class="w-1/4 sm:w-12 flex justify-center items-center"
                 type="submit"
                 value="Send"
               >
