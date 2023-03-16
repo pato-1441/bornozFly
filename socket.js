@@ -37,6 +37,10 @@ const setEvents = (io) => {
       emit("flight-history", await FlightsDB.readFlights());
     }
 
+    if ((await FlightsDB.readFlights().length) !== 0) {
+      emit("flight-cards", await FlightsDB.readFlights());
+    }
+
     socketClient.on("orderselectchange", async (data) => {
       emit("flight-name", await FlightsDB.readFlightByName(data));
     });

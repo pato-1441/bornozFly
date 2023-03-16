@@ -23,44 +23,30 @@ const orderFlightSelect = document.getElementById("orderFlightSelect");
 const orderFlightDate = document.getElementById("orderFlightDate");
 const orderFlightPrice = document.getElementById("orderFlightPrice");
 
+const flightCardsContainer = document.getElementById("flightCardsContainer");
+
 orderFlightSelect.onchange = (e) => {
   console.log(orderFlightSelect.value);
   e.preventDefault();
   socket.emit("orderselectchange", orderFlightSelect.value);
 };
 
-/*
-  productForm.onsubmit = (e) => {
-    e.preventDefault();
-    socket.emit("product", {
-      name: productNameInput.value,
-      price: productPriceInput.value,
-      url: productUrlInput.value,
-    });
-  };
-  */
-
-/*
-  messageForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    socket.emit("message", {
-      author: {
-        name: usernameAlias.value,
-      },
-      text: messageInput.value,
-      date: {
-        day: new Date().toLocaleDateString(),
-        hours: new Date().getHours(),
-        minutes: new Date().getMinutes(),
-        milliseconds: new Date().getMilliseconds(),
-      },
-    });
-    messageInput.value = "";
-  });
-  */
-
 socket.on("connect", () => {
   console.log("Connection to the server established ✅");
+});
+
+// render flight cards
+socket.on("flight-cards", (flights) => {
+  fetch("/templates/flightCardLayout.hbs")
+    .then((template) => template.text())
+    .then((text) => {
+      const template = Handlebars.compile(text);
+      flights.forEach((el) => {
+        const div = document.createElement("div");
+        div.innerHTML = template(el);
+        flightCardsContainer.appendChild(div);
+      });
+    });
 });
 
 // available flights
