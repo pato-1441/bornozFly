@@ -47,11 +47,15 @@ const postSignup = (req, res) => {
 };
 
 const postCreateOrder = (req, res) => {
-  const { body, user } = req;
-  const orderData = { body, user };
-  sendOrder(orderData);
-  twilioService.sendWhatsapp(orderData);
-  res.redirect("/");
+  try {
+    const { body, user } = req;
+    const orderData = { body, user };
+    sendOrder(orderData);
+    twilioService.sendWhatsapp(orderData);
+    res.redirect("/");
+  } catch (error) {
+    res.send(error).redirect("/");
+  }
 };
 
 export default {
@@ -64,5 +68,5 @@ export default {
   getSignupError,
   postLogin,
   postSignup,
-  postCreateOrder
+  postCreateOrder,
 };
