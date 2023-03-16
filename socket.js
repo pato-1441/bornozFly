@@ -24,7 +24,7 @@ const setEvents = (io) => {
     );
 
     if ((await MessagesDB.readMessages().length) !== 0) {
-      //emit("message-history", await MessagesDB.readMessages());
+      emit("message-history", await MessagesDB.readMessages());
     }
 
     if ((await FlightsDB.readFlights().length) !== 0) {
